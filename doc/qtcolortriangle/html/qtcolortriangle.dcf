@@ -1,0 +1,17 @@
+<!DOCTYPE DCF>
+<DCF ref="index.html" icon="qtcolortriangle.png" imagedir="../../gif" title="Qt Solutions: Color Triangle Documentation">
+<section ref="classes.html" title="Classes">
+    <section ref="qtcolortriangle.html" title="QtColorTriangle Class Reference">
+        <keyword ref="qtcolortriangle.html">QtColorTriangle</keyword>
+        <keyword ref="qtcolortriangle.html#colorChanged">colorChanged</keyword>
+        <keyword ref="qtcolortriangle.html#heightForWidth">heightForWidth</keyword>
+        <section ref="qtcolortriangle-members.html" title="List of all members"/>
+    </section>
+</section>
+<section ref="overviews.html" title="Overviews">
+    <section ref="index.html" title="Color Triangle">
+        <keyword ref="index.html">Color Triangle</keyword>
+    </section>
+</section>
+<section ref="examples.html" title="Tutorial &amp; Examples"/>
+</DCF>

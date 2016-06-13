@@ -1,0 +1,49 @@
+/*!
+	\page index.html
+	\title MML Widget
+
+    	\section1 Description
+	
+    	    The QtMmlWidget component renders mathematical formulas written in
+    	    MathML 2.0.
+	
+
+	
+	    QtMmlWidget implements the Presentation Markup subset of the
+	    MathML 2.0 specification. It relies on the presence of a unicode
+	    font for rendering mathematical symbols.
+	
+
+    	
+    	\section1 Overview
+	    \list
+	 \i  \link overview.html MML Widget \endlink \endlist
+	
+    	\section1 Classes
+	    \list
+	 \i  QtMmlWidget\endlist
+	
+    	\section1 Examples
+	    \list
+	 \i  \link example.html MML Browser Example \endlink \endlist
+	
+    
+
+    	
+
+    	
+    		\section1 Tested platforms
+		\list
+		\i Qt 4.4, 4.5 / Windows XP / MSVC.NET 2005
+		    \i Qt 4.4, 4.5 / Linux / gcc
+		    \i Qt 4.4, 4.5 / MacOS X 10.5 / gcc
+		    \endlist
+
+    	
+
+	
+		\section1 Screenshots
+
+    		\img integral.png
+		    
+	*/

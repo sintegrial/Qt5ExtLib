@@ -1,0 +1,26 @@
+<!DOCTYPE DCF>
+<DCF ref="index.html" icon="qtcolorcombobox.png" imagedir="../../gif" title="Qt Solutions: Color Combo Box Documentation">
+<section ref="classes.html" title="Classes">
+    <section ref="qtcolorcombobox.html" title="QtColorComboBox Class Reference">
+        <keyword ref="qtcolorcombobox.html">QtColorComboBox</keyword>
+        <keyword ref="qtcolorcombobox.html#activated">activated</keyword>
+        <keyword ref="qtcolorcombobox.html#addColor">addColor</keyword>
+        <keyword ref="qtcolorcombobox.html#color">color</keyword>
+        <keyword ref="qtcolorcombobox.html#colorCount">colorCount</keyword>
+        <keyword ref="qtcolorcombobox.html#currentColor">currentColor</keyword>
+        <keyword ref="qtcolorcombobox.html#highlighted">highlighted</keyword>
+        <keyword ref="qtcolorcombobox.html#insertColor">insertColor</keyword>
+        <keyword ref="qtcolorcombobox.html#isColorDialogEnabled">isColorDialogEnabled</keyword>
+        <keyword ref="qtcolorcombobox.html#setColorDialogEnabled">setColorDialogEnabled</keyword>
+        <keyword ref="qtcolorcombobox.html#setCurrentColor">setCurrentColor</keyword>
+        <keyword ref="qtcolorcombobox.html#setStandardColors">setStandardColors</keyword>
+        <section ref="qtcolorcombobox-members.html" title="List of all members"/>
+    </section>
+</section>
+<section ref="overviews.html" title="Overviews">
+    <section ref="index.html" title="Color Combo Box">
+        <keyword ref="index.html">Color Combo Box</keyword>
+    </section>
+</section>
+<section ref="examples.html" title="Tutorial &amp; Examples"/>
+</DCF>

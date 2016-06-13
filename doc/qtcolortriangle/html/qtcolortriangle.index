@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE QDOCINDEX>
+<INDEX url="" title="Qt Solutions: Color Triangle Documentation" version="">
+    <namespace access="public" threadsafety="unspecified" status="commendable" name="" href="" location="" module="">
+        <class access="public" threadsafety="unspecified" status="commendable" name="QtColorTriangle" href="qtcolortriangle.html" location="qtcolortriangle.h" bases="QWidget" module="">
+            <function access="public" threadsafety="unspecified" status="commendable" name="QtColorTriangle" fullname="QtColorTriangle::QtColorTriangle" href="qtcolortriangle.html#QtColorTriangle" location="qtcolortriangle.h" virtual="non" meta="constructor" const="false" static="false" overload="false" type="" signature="QtColorTriangle(QWidget * parent)">
+                <parameter left="QWidget *" right="" name="parent" default="0"/>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="~QtColorTriangle" fullname="QtColorTriangle::~QtColorTriangle" href="qtcolortriangle.html#dtor.QtColorTriangle" location="qtcolortriangle.h" virtual="non" meta="destructor" const="false" static="false" overload="false" type="" signature="~QtColorTriangle()"/>
+            <function access="public" threadsafety="unspecified" status="commendable" name="heightForWidth" fullname="QtColorTriangle::heightForWidth" href="qtcolortriangle.html#heightForWidth" location="qtcolortriangle.h" virtual="impure" meta="plain" const="true" static="false" overload="false" type="int" signature="heightForWidth(int w) const">
+                <parameter left="int" right="" name="w" default=""/>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="colorChanged" fullname="QtColorTriangle::colorChanged" href="qtcolortriangle.html#colorChanged" location="qtcolortriangle.h" virtual="non" meta="signal" const="false" static="false" overload="false" type="void" signature="colorChanged(const QColor &amp; color)">
+                <parameter left="const QColor &amp;" right="" name="color" default=""/>
+            </function>
+        </class>
+        <page access="public" status="commendable" name="index.html" href="index.html" subtype="page" title="Color Triangle" fulltitle="Color Triangle" subtitle="" location="index.qdoc">
+            <contents name="description" title="Description" level="1"/>
+            <contents name="classes" title="Classes" level="1"/>
+            <contents name="tested-platforms" title="Tested platforms" level="1"/>
+            <contents name="screenshots" title="Screenshots" level="1"/>
+        </page>
+    </namespace>
+</INDEX>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+    <namespace>com.nokia.qtsolutions.qtcolorcombobox_2.4</namespace>
+    <virtualFolder>qdoc</virtualFolder>
+    <customFilter name="Qt Solutions: Color Combo Box">
+        <filterAttribute>qt</filterAttribute>
+        <filterAttribute>qtcolorcombobox</filterAttribute>
+        <filterAttribute>solutions</filterAttribute>
+    </customFilter>
+    <filterSection>
+        <filterAttribute>qt</filterAttribute>
+        <filterAttribute>qtcolorcombobox</filterAttribute>
+        <filterAttribute>solutions</filterAttribute>
+        <toc>
+            <section ref="index.html" title="Qt Solutions: Color Combo Box Documentation">
+                <section ref="index.html" title="Color Combo Box"/>
+            </section>
+        </toc>
+        <keywords>
+            <keyword name="Color Combo Box" id="Color Combo Box" ref="index.html"/>
+            <keyword name="QtColorComboBox" id="QtColorComboBox" ref="qtcolorcombobox.html"/>
+            <keyword name="activated" id="QtColorComboBox::activated" ref="qtcolorcombobox.html#activated"/>
+            <keyword name="addColor" id="QtColorComboBox::addColor" ref="qtcolorcombobox.html#addColor"/>
+            <keyword name="color" id="QtColorComboBox::color" ref="qtcolorcombobox.html#color"/>
+            <keyword name="colorCount" id="QtColorComboBox::colorCount" ref="qtcolorcombobox.html#colorCount"/>
+            <keyword name="currentColor" id="QtColorComboBox::currentColor" ref="qtcolorcombobox.html#currentColor"/>
+            <keyword name="highlighted" id="QtColorComboBox::highlighted" ref="qtcolorcombobox.html#highlighted"/>
+            <keyword name="insertColor" id="QtColorComboBox::insertColor" ref="qtcolorcombobox.html#insertColor"/>
+            <keyword name="isColorDialogEnabled" id="QtColorComboBox::isColorDialogEnabled" ref="qtcolorcombobox.html#isColorDialogEnabled"/>
+            <keyword name="setColorDialogEnabled" id="QtColorComboBox::setColorDialogEnabled" ref="qtcolorcombobox.html#setColorDialogEnabled"/>
+            <keyword name="setCurrentColor" id="QtColorComboBox::setCurrentColor" ref="qtcolorcombobox.html#setCurrentColor"/>
+            <keyword name="setStandardColors" id="QtColorComboBox::setStandardColors" ref="qtcolorcombobox.html#setStandardColors"/>
+        </keywords>
+        <files>
+            <file>images/qtcolorcombobox.png</file>
+            <file>index.html</file>
+            <file>qtcolorcombobox.html</file>
+            <file>images/qtcolorcombobox.png</file>
+            <file>classic.css</file>
+            <file>images/qt-logo.png</file>
+        </files>
+    </filterSection>
+</QtHelpProject>

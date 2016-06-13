@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+    <namespace>com.nokia.qtsolutions.qtcolortriangle_2.6</namespace>
+    <virtualFolder>qdoc</virtualFolder>
+    <customFilter name="Qt Solutions: Color Triangle">
+        <filterAttribute>qt</filterAttribute>
+        <filterAttribute>solutions</filterAttribute>
+        <filterAttribute>qtcolortriangle</filterAttribute>
+    </customFilter>
+    <filterSection>
+        <filterAttribute>qt</filterAttribute>
+        <filterAttribute>solutions</filterAttribute>
+        <filterAttribute>qtcolortriangle</filterAttribute>
+        <toc>
+            <section ref="index.html" title="Qt Solutions: Color Triangle Documentation">
+                <section ref="index.html" title="Color Triangle"/>
+            </section>
+        </toc>
+        <keywords>
+            <keyword name="Color Triangle" id="Color Triangle" ref="index.html"/>
+            <keyword name="QtColorTriangle" id="QtColorTriangle" ref="qtcolortriangle.html"/>
+            <keyword name="colorChanged" id="QtColorTriangle::colorChanged" ref="qtcolortriangle.html#colorChanged"/>
+            <keyword name="heightForWidth" id="QtColorTriangle::heightForWidth" ref="qtcolortriangle.html#heightForWidth"/>
+            <keyword name="~QtColorTriangle" id="QtColorTriangle::~QtColorTriangle" ref="qtcolortriangle.html#dtor.QtColorTriangle"/>
+        </keywords>
+        <files>
+            <file>index.html</file>
+            <file>images/colortriangle.png</file>
+            <file>qtcolortriangle.html</file>
+            <file>images/colortriangle.png</file>
+            <file>classic.css</file>
+            <file>images/qt-logo.png</file>
+        </files>
+    </filterSection>
+</QtHelpProject>

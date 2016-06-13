@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- qtmmlwidget-2.4_1-opensource/example/example.qdoc -->
+<head>
+  <title>MML Browser Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><img src="images/qt-logo.png" align="left" width="57" height="67" border="0" /></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a></td>
+</tr></table><h1 class="title">MML Browser Example<br /><span class="subtitle"></span>
+</h1>
+<p>This example demonstrates how to use <a href="qtmmlwidget.html">QtMmlWidget</a>. It allows the user to browse MML files, displaying their content. If a directory contains an MML file and a PNG image with the same name, the image is assumed to be a reference of how the MML file should be rendered, and is also displayed. The complete sources may be found in the example directory. The most rellevant files are shown below.</p>
+<p align="center"><img src="images/example.png" /></p><p>&lt;hr&gt; mainwindow.h:</p>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+ ** All rights reserved.
+ ** Contact: Nokia Corporation (qt-info@nokia.com)
+ **
+ ** This file is part of a Qt Solutions component.
+ **
+ ** Commercial Usage
+ ** Licensees holding valid Qt Commercial licenses may use this file in
+ ** accordance with the Qt Solutions Commercial License Agreement provided
+ ** with the Software or, alternatively, in accordance with the terms
+ ** contained in a written agreement between you and Nokia.
+ **
+ ** GNU Lesser General Public License Usage
+ ** Alternatively, this file may be used under the terms of the GNU Lesser
+ ** General Public License version 2.1 as published by the Free Software
+ ** Foundation and appearing in the file LICENSE.LGPL included in the
+ ** packaging of this file.  Please review the following information to
+ ** ensure the GNU Lesser General Public License version 2.1 requirements
+ ** will be met: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+ **
+ ** In addition, as a special exception, Nokia gives you certain
+ ** additional rights. These rights are described in the Nokia Qt LGPL
+ ** Exception version 1.1, included in the file LGPL_EXCEPTION.txt in this
+ ** package.
+ **
+ ** GNU General Public License Usage
+ ** Alternatively, this file may be used under the terms of the GNU
+ ** General Public License version 3.0 as published by the Free Software
+ ** Foundation and appearing in the file LICENSE.GPL included in the
+ ** packaging of this file.  Please review the following information to
+ ** ensure the GNU General Public License version 3.0 requirements will be
+ ** met: http://www.gnu.org/copyleft/gpl.html.
+ **
+ ** Please note Third Party Software included with Qt Solutions may impose
+ ** additional restrictions and it is the user's responsibility to ensure
+ ** that they have met the licensing requirements of the GPL, LGPL, or Qt
+ ** Solutions Commercial license and the relevant license of the Third
+ ** Party Software they are using.
+ **
+ ** If you are unsure which license is appropriate for your use, please
+ ** contact Nokia at qt-info@nokia.com.
+ **
+ ****************************************************************************/</span>
+
+ #ifndef MAIN_WINDOW_H
+ #define MAIN_WINDOW_H
+
+ #include &lt;QtGui/QMainWindow&gt;
+<span class="comment"> //Added by qt3to4:</span>
+ #include &lt;QtGui/QLabel&gt;
+
+ class QtMmlWidget;
+ class QLabel;
+ class FileBrowser;
+
+ class MainWindow : public QMainWindow
+ {
+     Q_OBJECT
+
+     public:
+         MainWindow(QWidget *parent = 0);
+
+     public slots:
+         void zoomIn();
+         void zoomOut();
+         void toggleDrawFrames();
+         void openFile(const QString &amp;mml_file_name);
+
+     private:
+         QtMmlWidget *m_mml_widget;
+         QLabel *m_compare_image;
+         FileBrowser *m_file_browser;
+ };
+
+ void showWarning(const QString &amp;msg);
+
+ #endif</pre>
+<p>&lt;hr&gt; mainwindow.cpp:</p>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+ ** All rights reserved.
+ ** Contact: Nokia Corporation (qt-info@nokia.com)
+ **
+ ** This file is part of a Qt Solutions component.
+ **
+ ** Commercial Usage
+ ** Licensees holding valid Qt Commercial licenses may use this file in
+ ** accordance with the Qt Solutions Commercial License Agreement provided
+ ** with the Software or, alternatively, in accordance with the terms
+ ** contained in a written agreement between you and Nokia.
+ **
+ ** GNU Lesser General Public License Usage
+ ** Alternatively, this file may be used under the terms of the GNU Lesser
+ ** General Public License version 2.1 as published by the Free Software
+ ** Foundation and appearing in the file LICENSE.LGPL included in the
+ ** packaging of this file.  Please review the following information to
+ ** ensure the GNU Lesser General Public License version 2.1 requirements
+ ** will be met: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+ **
+ ** In addition, as a special exception, Nokia gives you certain
+ ** additional rights. These rights are described in the Nokia Qt LGPL
+ ** Exception version 1.1, included in the file LGPL_EXCEPTION.txt in this
+ ** package.
+ **
+ ** GNU General Public License Usage
+ ** Alternatively, this file may be used under the terms of the GNU
+ ** General Public License version 3.0 as published by the Free Software
+ ** Foundation and appearing in the file LICENSE.GPL included in the
+ ** packaging of this file.  Please review the following information to
+ ** ensure the GNU General Public License version 3.0 requirements will be
+ ** met: http://www.gnu.org/copyleft/gpl.html.
+ **
+ ** Please note Third Party Software included with Qt Solutions may impose
+ ** additional restrictions and it is the user's responsibility to ensure
+ ** that they have met the licensing requirements of the GPL, LGPL, or Qt
+ ** Solutions Commercial license and the relevant license of the Third
+ ** Party Software they are using.
+ **
+ ** If you are unsure which license is appropriate for your use, please
+ ** contact Nokia at qt-info@nokia.com.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;stdlib.h&gt;
+ #include &lt;errno.h&gt;
+
+ #include &lt;QtCore/QFile&gt;
+ #include &lt;QtCore/QTextStream&gt;
+ #include &lt;QtGui/QLabel&gt;
+ #include &lt;QtGui/QLayout&gt;
+ #include &lt;QtGui/QPixmap&gt;
+ #include &lt;QtGui/QToolButton&gt;
+ #include &lt;QtGui/QToolBar&gt;
+ #include &lt;QtGui/QSplitter&gt;
+ #include &lt;QtGui/QMessageBox&gt;
+
+ #include &lt;qtmmlwidget.h&gt;
+ #include &lt;QtGui/QVBoxLayout&gt;
+
+ #include &quot;mainwindow.h&quot;
+ #include &quot;filebrowser.h&quot;
+
+ void showWarning(const QString &amp;msg)
+ {
+     QMessageBox::warning(0, &quot;Warning&quot;, msg,
+                             QMessageBox::Ok,
+                             QMessageBox::NoButton,
+                             QMessageBox::NoButton);
+ }
+
+ MainWindow::MainWindow(QWidget *parent)
+     : QMainWindow(parent)
+ {
+     setWindowTitle(&quot;MathML Browser&quot;);
+
+     QSplitter *splitter = new QSplitter(this);
+     splitter-&gt;setChildrenCollapsible(false);
+
+     m_file_browser = new FileBrowser(&quot;*.mml&quot;, splitter);
+
+     QWidget *formula_widget = new QWidget(splitter);
+     QVBoxLayout *layout = new QVBoxLayout;
+     layout-&gt;setSpacing(2);
+     layout-&gt;setMargin(2);
+     m_mml_widget = new QtMmlWidget(formula_widget);
+     layout-&gt;addWidget(m_mml_widget);
+     m_mml_widget-&gt;setBackgroundRole(QPalette::Base);
+     m_compare_image = new QLabel;
+     layout-&gt;addWidget(m_compare_image);
+     m_compare_image-&gt;setAlignment(Qt::AlignCenter);
+     m_compare_image-&gt;setBackgroundRole(QPalette::Base);
+
+     formula_widget-&gt;setLayout(layout);
+     setCentralWidget(splitter);
+
+     QToolBar *tool_bar = new QToolBar(this);
+     tool_bar-&gt;addAction(QIcon(&quot;:/images/zoom_in.png&quot;),
+                     &quot;Zoom in&quot;, this, SLOT(zoomIn()));
+     tool_bar-&gt;addAction(QIcon(&quot;:/images/zoom_out.png&quot;),
+                     &quot;Zoom out&quot;, this, SLOT(zoomOut()));
+     tool_bar-&gt;addAction(QIcon(&quot;:/images/frames.png&quot;),
+                     &quot;Toggle frames&quot;, this, SLOT(toggleDrawFrames()));
+
+     addToolBar(tool_bar);
+     connect(m_file_browser, SIGNAL(fileSelected(const QString &amp;)), this, SLOT(openFile(const QString &amp;)));
+ }
+
+ void MainWindow::zoomIn()
+ {
+     m_mml_widget-&gt;setBaseFontPointSize(m_mml_widget-&gt;baseFontPointSize() + 2);
+ }
+
+ void MainWindow::zoomOut()
+ {
+     m_mml_widget-&gt;setBaseFontPointSize(m_mml_widget-&gt;baseFontPointSize() - 2);
+ }
+
+ void MainWindow::toggleDrawFrames()
+ {
+     m_mml_widget-&gt;setDrawFrames(!m_mml_widget-&gt;drawFrames());
+ }
+
+ void MainWindow::openFile(const QString &amp;mml_file_name)
+ {
+     m_mml_widget-&gt;clear();
+     m_compare_image-&gt;clear();
+
+     QFile file(mml_file_name);
+     if (!file.open(QIODevice::ReadOnly)) {
+         showWarning(&quot;File error: Could not open \&quot;&quot;
+                         + mml_file_name
+                         + &quot;\&quot;: &quot; + file.errorString());
+         return;
+     }
+
+     QTextStream stream(&amp;file);
+<span class="comment"> //    stream.setEncoding(QTextStream::UnicodeUTF8);</span>
+     QString text = stream.readAll();
+     file.close();
+
+     QString error_msg;
+     int error_line, error_column;
+     bool result = m_mml_widget-&gt;setContent(text, &amp;error_msg, &amp;error_line,
+                                                 &amp;error_column);
+
+     if (!result) {
+         showWarning(&quot;Parse error: line &quot; + QString::number(error_line)
+                         + &quot;, col &quot; + QString::number(error_column)
+                         + &quot;: &quot; + error_msg);
+         return;
+     }
+
+     QPixmap pm;
+     int idx = mml_file_name.lastIndexOf('.');
+     if (idx != -1) {
+         QString image_file_name = mml_file_name.mid(0, idx + 1) + &quot;png&quot;;
+         if (pm.load(image_file_name))
+             m_compare_image-&gt;setPixmap(pm);
+     }
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%" align="left">Copyright &copy; 2009 Nokia Corporation and/or its subsidiary(-ies)</td>
+<td width="40%" align="center"><a href="http://qt.nokia.com/doc/trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt Solutions</div></td>
+</tr></table></div></address></body>
+</html>

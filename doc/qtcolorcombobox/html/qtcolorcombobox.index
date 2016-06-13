@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE QDOCINDEX>
+<INDEX url="" title="Qt Solutions: Color Combo Box Documentation" version="">
+    <namespace access="public" threadsafety="unspecified" status="commendable" name="" href="" location="" module="">
+        <class access="public" threadsafety="unspecified" status="commendable" name="QtColorComboBox" href="qtcolorcombobox.html" location="qtcolorcombobox.h" bases="QComboBox" module="">
+            <function access="public" threadsafety="unspecified" status="commendable" name="QtColorComboBox" fullname="QtColorComboBox::QtColorComboBox" href="qtcolorcombobox.html#QtColorComboBox" location="qtcolorcombobox.h" virtual="non" meta="constructor" const="false" static="false" overload="false" type="" signature="QtColorComboBox(QWidget * parent, const char * name)">
+                <parameter left="QWidget *" right="" name="parent" default="0"/>
+                <parameter left="const char *" right="" name="name" default="0"/>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="insertColor" fullname="QtColorComboBox::insertColor" href="qtcolorcombobox.html#insertColor" location="qtcolorcombobox.h" virtual="non" meta="plain" const="false" static="false" overload="false" type="void" signature="insertColor(int index, const QColor &amp; color, const QString &amp; name)">
+                <parameter left="int" right="" name="index" default=""/>
+                <parameter left="const QColor &amp;" right="" name="color" default=""/>
+                <parameter left="const QString &amp;" right="" name="name" default=""/>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="addColor" fullname="QtColorComboBox::addColor" href="qtcolorcombobox.html#addColor" location="qtcolorcombobox.h" virtual="non" meta="plain" const="false" static="false" overload="false" type="void" signature="addColor(const QColor &amp; color, const QString &amp; name)">
+                <parameter left="const QColor &amp;" right="" name="color" default=""/>
+                <parameter left="const QString &amp;" right="" name="name" default=""/>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="colorCount" fullname="QtColorComboBox::colorCount" href="qtcolorcombobox.html#colorCount" location="qtcolorcombobox.h" virtual="non" meta="plain" const="true" static="false" overload="false" type="int" signature="colorCount() const"/>
+            <function access="public" threadsafety="unspecified" status="commendable" name="setCurrentColor" fullname="QtColorComboBox::setCurrentColor" href="qtcolorcombobox.html#setCurrentColor" location="qtcolorcombobox.h" virtual="non" meta="plain" const="false" static="false" overload="false" type="void" signature="setCurrentColor(const QColor &amp; color)">
+                <parameter left="const QColor &amp;" right="" name="color" default=""/>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="currentColor" fullname="QtColorComboBox::currentColor" href="qtcolorcombobox.html#currentColor" location="qtcolorcombobox.h" virtual="non" meta="plain" const="true" static="false" overload="false" type="QColor" signature="currentColor() const"/>
+            <function access="public" threadsafety="unspecified" status="commendable" name="color" fullname="QtColorComboBox::color" href="qtcolorcombobox.html#color" location="qtcolorcombobox.h" virtual="non" meta="plain" const="true" static="false" overload="false" type="QColor" signature="color(int index) const">
+                <parameter left="int" right="" name="index" default=""/>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="setColorDialogEnabled" fullname="QtColorComboBox::setColorDialogEnabled" href="qtcolorcombobox.html#setColorDialogEnabled" location="qtcolorcombobox.h" virtual="non" meta="plain" const="false" static="false" overload="false" type="void" signature="setColorDialogEnabled(bool enabled)">
+                <parameter left="bool" right="" name="enabled" default="true"/>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="isColorDialogEnabled" fullname="QtColorComboBox::isColorDialogEnabled" href="qtcolorcombobox.html#isColorDialogEnabled" location="qtcolorcombobox.h" virtual="non" meta="plain" const="true" static="false" overload="false" type="bool" signature="isColorDialogEnabled() const"/>
+            <function access="public" threadsafety="unspecified" status="commendable" name="setStandardColors" fullname="QtColorComboBox::setStandardColors" href="qtcolorcombobox.html#setStandardColors" location="qtcolorcombobox.h" virtual="non" meta="plain" const="false" static="false" overload="false" type="void" signature="setStandardColors()"/>
+            <function access="public" threadsafety="unspecified" status="commendable" name="activated" fullname="QtColorComboBox::activated" href="qtcolorcombobox.html#activated" location="qtcolorcombobox.h" virtual="non" meta="signal" const="false" static="false" overload="false" type="void" signature="activated(const QColor &amp; color)">
+                <parameter left="const QColor &amp;" right="" name="color" default=""/>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="highlighted" fullname="QtColorComboBox::highlighted" href="qtcolorcombobox.html#highlighted" location="qtcolorcombobox.h" virtual="non" meta="signal" const="false" static="false" overload="false" type="void" signature="highlighted(const QColor &amp; color)">
+                <parameter left="const QColor &amp;" right="" name="color" default=""/>
+            </function>
+        </class>
+        <page access="public" status="commendable" name="index.html" href="index.html" subtype="page" title="Color Combo Box" fulltitle="Color Combo Box" subtitle="" location="index.qdoc">
+            <contents name="description" title="Description" level="1"/>
+            <contents name="classes" title="Classes" level="1"/>
+            <contents name="tested-platforms" title="Tested platforms" level="1"/>
+            <contents name="screenshots" title="Screenshots" level="1"/>
+        </page>
+    </namespace>
+</INDEX>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE QDOCINDEX>
+<INDEX url="" title="Qt Solutions: MML Widget Documentation" version="">
+    <namespace access="public" threadsafety="unspecified" status="commendable" name="" href="" location="" module="">
+        <class access="public" threadsafety="unspecified" status="commendable" name="QtMmlWidget" href="qtmmlwidget.html" location="qtmmlwidget.h" bases="QFrame" module="">
+            <enum access="public" threadsafety="unspecified" status="commendable" name="MmlFont" fullname="QtMmlWidget::MmlFont" href="qtmmlwidget.html#MmlFont-enum" location="qtmmlwidget.h">
+                <value name="NormalFont" value="0"/>
+                <value name="FrakturFont" value="1"/>
+                <value name="SansSerifFont" value="2"/>
+                <value name="ScriptFont" value="3"/>
+                <value name="MonospaceFont" value="4"/>
+                <value name="DoublestruckFont" value="5"/>
+            </enum>
+            <function access="public" threadsafety="unspecified" status="commendable" name="QtMmlWidget" fullname="QtMmlWidget::QtMmlWidget" href="qtmmlwidget.html#QtMmlWidget" location="qtmmlwidget.h" virtual="non" meta="constructor" const="false" static="false" overload="false" type="" signature="QtMmlWidget(QWidget * parent)">
+                <parameter left="QWidget *" right="" name="parent" default="0"/>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="~QtMmlWidget" fullname="QtMmlWidget::~QtMmlWidget" href="qtmmlwidget.html#dtor.QtMmlWidget" location="qtmmlwidget.h" virtual="non" meta="destructor" const="false" static="false" overload="false" type="" signature="~QtMmlWidget()"/>
+            <function access="public" threadsafety="unspecified" status="commendable" name="fontName" fullname="QtMmlWidget::fontName" href="qtmmlwidget.html#fontName" location="qtmmlwidget.h" virtual="non" meta="plain" const="true" static="false" overload="false" type="QString" signature="fontName(MmlFont type) const">
+                <parameter left="MmlFont" right="" name="type" default=""/>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="setFontName" fullname="QtMmlWidget::setFontName" href="qtmmlwidget.html#setFontName" location="qtmmlwidget.h" virtual="non" meta="plain" const="false" static="false" overload="false" type="void" signature="setFontName(MmlFont type, const QString &amp; name)">
+                <parameter left="MmlFont" right="" name="type" default=""/>
+                <parameter left="const QString &amp;" right="" name="name" default=""/>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="baseFontPointSize" fullname="QtMmlWidget::baseFontPointSize" href="qtmmlwidget.html#baseFontPointSize" location="qtmmlwidget.h" virtual="non" meta="plain" const="true" static="false" overload="false" type="int" signature="baseFontPointSize() const"/>
+            <function access="public" threadsafety="unspecified" status="commendable" name="setBaseFontPointSize" fullname="QtMmlWidget::setBaseFontPointSize" href="qtmmlwidget.html#setBaseFontPointSize" location="qtmmlwidget.h" virtual="non" meta="plain" const="false" static="false" overload="false" type="void" signature="setBaseFontPointSize(int size)">
+                <parameter left="int" right="" name="size" default=""/>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="setContent" fullname="QtMmlWidget::setContent" href="qtmmlwidget.html#setContent" location="qtmmlwidget.h" virtual="non" meta="plain" const="false" static="false" overload="false" type="bool" signature="setContent(const QString &amp; text, QString * errorMsg, int * errorLine, int * errorColumn)">
+                <parameter left="const QString &amp;" right="" name="text" default=""/>
+                <parameter left="QString *" right="" name="errorMsg" default="0"/>
+                <parameter left="int *" right="" name="errorLine" default="0"/>
+                <parameter left="int *" right="" name="errorColumn" default="0"/>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="sizeHint" fullname="QtMmlWidget::sizeHint" href="qtmmlwidget.html#sizeHint" location="qtmmlwidget.h" virtual="impure" meta="plain" const="true" static="false" overload="false" type="QSize" signature="sizeHint() const"/>
+            <function access="public" threadsafety="unspecified" status="commendable" name="setDrawFrames" fullname="QtMmlWidget::setDrawFrames" href="qtmmlwidget.html#setDrawFrames" location="qtmmlwidget.h" virtual="non" meta="plain" const="false" static="false" overload="false" type="void" signature="setDrawFrames(bool b)">
+                <parameter left="bool" right="" name="b" default=""/>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="drawFrames" fullname="QtMmlWidget::drawFrames" href="qtmmlwidget.html#drawFrames" location="qtmmlwidget.h" virtual="non" meta="plain" const="true" static="false" overload="false" type="bool" signature="drawFrames() const"/>
+            <function access="public" threadsafety="unspecified" status="commendable" name="clear" fullname="QtMmlWidget::clear" href="qtmmlwidget.html#clear" location="qtmmlwidget.h" virtual="non" meta="plain" const="false" static="false" overload="false" type="void" signature="clear()"/>
+        </class>
+        <class access="public" threadsafety="unspecified" status="commendable" name="QtMmlDocument" href="qtmmldocument.html" location="qtmmlwidget.h" bases="" module="">
+            <function access="public" threadsafety="unspecified" status="commendable" name="QtMmlDocument" fullname="QtMmlDocument::QtMmlDocument" href="qtmmldocument.html#QtMmlDocument" location="qtmmlwidget.h" virtual="non" meta="constructor" const="false" static="false" overload="false" type="" signature="QtMmlDocument()"/>
+            <function access="public" threadsafety="unspecified" status="commendable" name="~QtMmlDocument" fullname="QtMmlDocument::~QtMmlDocument" href="qtmmldocument.html#dtor.QtMmlDocument" location="qtmmlwidget.h" virtual="non" meta="destructor" const="false" static="false" overload="false" type="" signature="~QtMmlDocument()"/>
+            <function access="public" threadsafety="unspecified" status="commendable" name="clear" fullname="QtMmlDocument::clear" href="qtmmldocument.html#clear" location="qtmmlwidget.h" virtual="non" meta="plain" const="false" static="false" overload="false" type="void" signature="clear()"/>
+            <function access="public" threadsafety="unspecified" status="commendable" name="setContent" fullname="QtMmlDocument::setContent" href="qtmmldocument.html#setContent" location="qtmmlwidget.h" virtual="non" meta="plain" const="false" static="false" overload="false" type="bool" signature="setContent(QString text, QString * errorMsg, int * errorLine, int * errorColumn)">
+                <parameter left="QString" right="" name="text" default=""/>
+                <parameter left="QString *" right="" name="errorMsg" default="0"/>
+                <parameter left="int *" right="" name="errorLine" default="0"/>
+                <parameter left="int *" right="" name="errorColumn" default="0"/>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="paint" fullname="QtMmlDocument::paint" href="qtmmldocument.html#paint" location="qtmmlwidget.h" virtual="non" meta="plain" const="true" static="false" overload="false" type="void" signature="paint(QPainter * p, const QPoint &amp; pos) const">
+                <parameter left="QPainter *" right="" name="p" default=""/>
+                <parameter left="const QPoint &amp;" right="" name="pos" default=""/>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="size" fullname="QtMmlDocument::size" href="qtmmldocument.html#size" location="qtmmlwidget.h" virtual="non" meta="plain" const="true" static="false" overload="false" type="QSize" signature="size() const"/>
+            <function access="public" threadsafety="unspecified" status="commendable" name="fontName" fullname="QtMmlDocument::fontName" href="qtmmldocument.html#fontName" location="qtmmlwidget.h" virtual="non" meta="plain" const="true" static="false" overload="false" type="QString" signature="fontName(QtMmlWidget::MmlFont type) const">
+                <parameter left="QtMmlWidget::MmlFont" right="" name="type" default=""/>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="setFontName" fullname="QtMmlDocument::setFontName" href="qtmmldocument.html#setFontName" location="qtmmlwidget.h" virtual="non" meta="plain" const="false" static="false" overload="false" type="void" signature="setFontName(QtMmlWidget::MmlFont type, const QString &amp; name)">
+                <parameter left="QtMmlWidget::MmlFont" right="" name="type" default=""/>
+                <parameter left="const QString &amp;" right="" name="name" default=""/>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="baseFontPointSize" fullname="QtMmlDocument::baseFontPointSize" href="qtmmldocument.html#baseFontPointSize" location="qtmmlwidget.h" virtual="non" meta="plain" const="true" static="false" overload="false" type="int" signature="baseFontPointSize() const"/>
+            <function access="public" threadsafety="unspecified" status="commendable" name="setBaseFontPointSize" fullname="QtMmlDocument::setBaseFontPointSize" href="qtmmldocument.html#setBaseFontPointSize" location="qtmmlwidget.h" virtual="non" meta="plain" const="false" static="false" overload="false" type="void" signature="setBaseFontPointSize(int size)">
+                <parameter left="int" right="" name="size" default=""/>
+            </function>
+        </class>
+        <page access="public" status="commendable" name="overview.html" href="overview.html" subtype="page" title="Qt MML Widget Overview" fulltitle="Qt MML Widget Overview" subtitle="" location="overview.qdoc"/>
+        <page access="public" status="commendable" name="index.html" href="index.html" subtype="page" title="MML Widget" fulltitle="MML Widget" subtitle="" location="index.qdoc">
+            <contents name="description" title="Description" level="1"/>
+            <contents name="overview" title="Overview" level="1"/>
+            <contents name="classes" title="Classes" level="1"/>
+            <contents name="examples" title="Examples" level="1"/>
+            <contents name="tested-platforms" title="Tested platforms" level="1"/>
+            <contents name="screenshots" title="Screenshots" level="1"/>
+        </page>
+        <page access="public" status="commendable" name="example.html" href="example.html" subtype="page" title="MML Browser Example" fulltitle="MML Browser Example" subtitle="" location="example.qdoc"/>
+    </namespace>
+</INDEX>

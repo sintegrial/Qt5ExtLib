@@ -1,0 +1,42 @@
+/*!
+	\page index.html
+	\title Color Triangle
+
+    	\section1 Description
+	
+            A color selection widget based on the
+            hue-saturation-value (HSV) color model.
+        
+
+	
+            The color space is presented as
+a triangle, making it easy for the user to find and select precisely the
+wanted color shade.These color widgets are particularly useful for
+developers of graphics, imaging, and visualization applications.
+        
+
+    	
+	\section1 Classes
+	    \list
+	 \i  QtColorTriangle\endlist
+	
+    
+
+    	
+
+    	
+    		\section1 Tested platforms
+		\list
+		\i Qt 4.4, 4.5 / Windows XP / MSVC.NET 2005
+		    \i Qt 4.4, 4.5 / Linux / gcc
+		    \i Qt 4.4, 4.5 / MacOS X 10.5 / gcc
+		    \endlist
+
+    	
+
+	
+		\section1 Screenshots
+
+    		\img colortriangle.png
+		    
+	*/

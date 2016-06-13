@@ -1,0 +1,26 @@
+<!DOCTYPE DCF>
+<DCF ref="index.html" icon="qtthumbwheel.png" imagedir="../../gif" title="Qt Solutions: Thumb Wheel Documentation">
+<section ref="classes.html" title="Classes">
+    <section ref="qtthumbwheel.html" title="QtThumbWheel Class Reference">
+        <keyword ref="qtthumbwheel.html">QtThumbWheel</keyword>
+        <keyword ref="qtthumbwheel.html#cogCount-prop">cogCount</keyword>
+        <keyword ref="qtthumbwheel.html#cogCount-prop">setCogCount</keyword>
+        <keyword ref="qtthumbwheel.html#limitedDrag-prop">limitedDrag</keyword>
+        <keyword ref="qtthumbwheel.html#limitedDrag-prop">setLimitedDrag</keyword>
+        <keyword ref="qtthumbwheel.html#transmissionRatio-prop">transmissionRatio</keyword>
+        <keyword ref="qtthumbwheel.html#transmissionRatio-prop">setTransmissionRatio</keyword>
+        <keyword ref="qtthumbwheel.html#wrapsAround-prop">wrapsAround</keyword>
+        <keyword ref="qtthumbwheel.html#wrapsAround-prop">setWrapsAround</keyword>
+        <section ref="qtthumbwheel-members.html" title="List of all members"/>
+    </section>
+</section>
+<section ref="overviews.html" title="Overviews">
+    <section ref="simple-example.html" title="A simple example of the Thumb Wheel component">
+        <keyword ref="simple-example.html">A simple example of the Thumb Wheel component</keyword>
+    </section>
+    <section ref="index.html" title="Thumb Wheel">
+        <keyword ref="index.html">Thumb Wheel</keyword>
+    </section>
+</section>
+<section ref="examples.html" title="Tutorial &amp; Examples"/>
+</DCF>

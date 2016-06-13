@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+    <namespace>com.nokia.qtsolutions.qtmmlwidget_2.4</namespace>
+    <virtualFolder>qdoc</virtualFolder>
+    <customFilter name="Qt Solutions: MML Widget">
+        <filterAttribute>qt</filterAttribute>
+        <filterAttribute>qtmmlwidget</filterAttribute>
+        <filterAttribute>solutions</filterAttribute>
+    </customFilter>
+    <filterSection>
+        <filterAttribute>qt</filterAttribute>
+        <filterAttribute>qtmmlwidget</filterAttribute>
+        <filterAttribute>solutions</filterAttribute>
+        <toc>
+            <section ref="index.html" title="Qt Solutions: MML Widget Documentation">
+                <section ref="example.html" title="MML Browser Example"/>
+                <section ref="index.html" title="MML Widget"/>
+                <section ref="overview.html" title="Qt MML Widget Overview"/>
+            </section>
+        </toc>
+        <keywords>
+            <keyword name="MML Browser Example" id="MML Browser Example" ref="example.html"/>
+            <keyword name="MML Widget" id="MML Widget" ref="index.html"/>
+            <keyword name="Qt MML Widget Overview" id="Qt MML Widget Overview" ref="overview.html"/>
+            <keyword name="QtMmlDocument" id="QtMmlDocument" ref="qtmmldocument.html"/>
+            <keyword name="baseFontPointSize" id="QtMmlDocument::baseFontPointSize" ref="qtmmldocument.html#baseFontPointSize"/>
+            <keyword name="clear" id="QtMmlDocument::clear" ref="qtmmldocument.html#clear"/>
+            <keyword name="fontName" id="QtMmlDocument::fontName" ref="qtmmldocument.html#fontName"/>
+            <keyword name="paint" id="QtMmlDocument::paint" ref="qtmmldocument.html#paint"/>
+            <keyword name="setBaseFontPointSize" id="QtMmlDocument::setBaseFontPointSize" ref="qtmmldocument.html#setBaseFontPointSize"/>
+            <keyword name="setContent" id="QtMmlDocument::setContent" ref="qtmmldocument.html#setContent"/>
+            <keyword name="setFontName" id="QtMmlDocument::setFontName" ref="qtmmldocument.html#setFontName"/>
+            <keyword name="size" id="QtMmlDocument::size" ref="qtmmldocument.html#size"/>
+            <keyword name="~QtMmlDocument" id="QtMmlDocument::~QtMmlDocument" ref="qtmmldocument.html#dtor.QtMmlDocument"/>
+            <keyword name="QtMmlWidget" id="QtMmlWidget" ref="qtmmlwidget.html"/>
+            <keyword name="QtMmlWidget::MmlFont" id="QtMmlWidget::MmlFont" ref="qtmmlwidget.html#MmlFont-enum"/>
+            <keyword name="QtMmlWidget::NormalFont" id="QtMmlWidget::NormalFont" ref="qtmmlwidget.html#MmlFont-enum"/>
+            <keyword name="QtMmlWidget::FrakturFont" id="QtMmlWidget::FrakturFont" ref="qtmmlwidget.html#MmlFont-enum"/>
+            <keyword name="QtMmlWidget::SansSerifFont" id="QtMmlWidget::SansSerifFont" ref="qtmmlwidget.html#MmlFont-enum"/>
+            <keyword name="QtMmlWidget::ScriptFont" id="QtMmlWidget::ScriptFont" ref="qtmmlwidget.html#MmlFont-enum"/>
+            <keyword name="QtMmlWidget::MonospaceFont" id="QtMmlWidget::MonospaceFont" ref="qtmmlwidget.html#MmlFont-enum"/>
+            <keyword name="QtMmlWidget::DoublestruckFont" id="QtMmlWidget::DoublestruckFont" ref="qtmmlwidget.html#MmlFont-enum"/>
+            <keyword name="baseFontPointSize" id="QtMmlWidget::baseFontPointSize" ref="qtmmlwidget.html#baseFontPointSize"/>
+            <keyword name="clear" id="QtMmlWidget::clear" ref="qtmmlwidget.html#clear"/>
+            <keyword name="drawFrames" id="QtMmlWidget::drawFrames" ref="qtmmlwidget.html#drawFrames"/>
+            <keyword name="fontName" id="QtMmlWidget::fontName" ref="qtmmlwidget.html#fontName"/>
+            <keyword name="setBaseFontPointSize" id="QtMmlWidget::setBaseFontPointSize" ref="qtmmlwidget.html#setBaseFontPointSize"/>
+            <keyword name="setContent" id="QtMmlWidget::setContent" ref="qtmmlwidget.html#setContent"/>
+            <keyword name="setDrawFrames" id="QtMmlWidget::setDrawFrames" ref="qtmmlwidget.html#setDrawFrames"/>
+            <keyword name="setFontName" id="QtMmlWidget::setFontName" ref="qtmmlwidget.html#setFontName"/>
+            <keyword name="sizeHint" id="QtMmlWidget::sizeHint" ref="qtmmlwidget.html#sizeHint"/>
+            <keyword name="~QtMmlWidget" id="QtMmlWidget::~QtMmlWidget" ref="qtmmlwidget.html#dtor.QtMmlWidget"/>
+        </keywords>
+        <files>
+            <file>qtmmldocument.html</file>
+            <file>index.html</file>
+            <file>example.html</file>
+            <file>images/example.png</file>
+            <file>images/integral.png</file>
+            <file>qtmmlwidget.html</file>
+            <file>overview.html</file>
+            <file>images/example.png</file>
+            <file>images/integral.png</file>
+            <file>classic.css</file>
+            <file>images/qt-logo.png</file>
+        </files>
+    </filterSection>
+</QtHelpProject>

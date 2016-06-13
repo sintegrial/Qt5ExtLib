@@ -1,0 +1,45 @@
+/*!
+	\page index.html
+	\title Thumb Wheel
+
+    	\section1 Description
+	
+            The QtThumbWheel widget provides a vertical or horizontal
+            thumb-wheel widget.
+        
+
+	
+	    The widget is often used in 2D and 3D applications to control
+	    rotation, zooming and scrolling. The rotation of the thumb-wheel is
+	    translated into an integer value within a specified range.
+        
+
+    	
+        \section1 Classes
+	    \list
+	 \i  QtThumbWheel\endlist
+	
+        \section1 Examples
+	    \list
+	 \i  \link simple-example.html A simple example \endlink \endlist
+	
+    
+
+    	
+
+    	
+    		\section1 Tested platforms
+		\list
+		\i Qt 4.4, 4.5 / Windows XP / MSVC.NET 2005
+		    \i Qt 4.4, 4.5 / Linux / gcc
+		    \i Qt 4.4, 4.5 / MacOS X 10.5 / gcc
+		    \endlist
+
+    	
+
+	
+		\section1 Screenshots
+
+    		\img qtthumbwheel-h.png
+		    
+	*/

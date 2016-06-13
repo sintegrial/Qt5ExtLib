@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE QDOCINDEX>
+<INDEX url="" title="Qt Solutions: Thumb Wheel Documentation" version="">
+    <namespace access="public" threadsafety="unspecified" status="commendable" name="" href="" location="" module="">
+        <class access="public" threadsafety="unspecified" status="commendable" name="QtThumbWheel" href="qtthumbwheel.html" location="qtthumbwheel.h" bases="QAbstractSlider" module="">
+            <property access="public" threadsafety="unspecified" status="commendable" name="transmissionRatio" fullname="QtThumbWheel::transmissionRatio" href="qtthumbwheel.html#transmissionRatio-prop" location="qtthumbwheel.h" type="double">
+                <getter name="transmissionRatio"/>
+                <setter name="setTransmissionRatio"/>
+            </property>
+            <property access="public" threadsafety="unspecified" status="commendable" name="wrapsAround" fullname="QtThumbWheel::wrapsAround" href="qtthumbwheel.html#wrapsAround-prop" location="qtthumbwheel.h" type="bool">
+                <getter name="wrapsAround"/>
+                <setter name="setWrapsAround"/>
+            </property>
+            <property access="public" threadsafety="unspecified" status="commendable" name="cogCount" fullname="QtThumbWheel::cogCount" href="qtthumbwheel.html#cogCount-prop" location="qtthumbwheel.h" type="int">
+                <getter name="cogCount"/>
+                <setter name="setCogCount"/>
+            </property>
+            <property access="public" threadsafety="unspecified" status="commendable" name="limitedDrag" fullname="QtThumbWheel::limitedDrag" href="qtthumbwheel.html#limitedDrag-prop" location="qtthumbwheel.h" type="bool">
+                <getter name="limitedDrag"/>
+                <setter name="setLimitedDrag"/>
+            </property>
+            <function access="public" threadsafety="unspecified" status="commendable" name="QtThumbWheel" fullname="QtThumbWheel::QtThumbWheel" href="qtthumbwheel.html#QtThumbWheel" location="qtthumbwheel.h" virtual="non" meta="constructor" const="false" static="false" overload="false" type="" signature="QtThumbWheel(QWidget * parent)">
+                <parameter left="QWidget *" right="" name="parent" default="0"/>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="QtThumbWheel" fullname="QtThumbWheel::QtThumbWheel" href="qtthumbwheel.html#QtThumbWheel-2" location="qtthumbwheel.h" virtual="non" meta="constructor" const="false" static="false" overload="true" overload-number="2" type="" signature="QtThumbWheel(int minimum, int maximum, int pageStep, int value, Qt::Orientation orientation, QWidget * parent)">
+                <parameter left="int" right="" name="minimum" default=""/>
+                <parameter left="int" right="" name="maximum" default=""/>
+                <parameter left="int" right="" name="pageStep" default=""/>
+                <parameter left="int" right="" name="value" default=""/>
+                <parameter left="Qt::Orientation" right="" name="orientation" default=""/>
+                <parameter left="QWidget *" right="" name="parent" default="0"/>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="~QtThumbWheel" fullname="QtThumbWheel::~QtThumbWheel" href="qtthumbwheel.html#dtor.QtThumbWheel" location="qtthumbwheel.h" virtual="non" meta="destructor" const="false" static="false" overload="false" type="" signature="~QtThumbWheel()"/>
+            <function access="public" threadsafety="unspecified" status="commendable" name="wrapsAround" fullname="QtThumbWheel::wrapsAround" href="qtthumbwheel.html#wrapsAround-prop" location="qtthumbwheel.cpp" virtual="non" meta="plain" const="true" static="false" overload="false" associated-property="wrapsAround" type="bool" signature="wrapsAround() const"/>
+            <function access="public" threadsafety="unspecified" status="commendable" name="setWrapsAround" fullname="QtThumbWheel::setWrapsAround" href="qtthumbwheel.html#wrapsAround-prop" location="qtthumbwheel.cpp" virtual="non" meta="plain" const="false" static="false" overload="false" associated-property="wrapsAround" type="void" signature="setWrapsAround(bool enabled)">
+                <parameter left="bool" right="" name="enabled" default=""/>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="transmissionRatio" fullname="QtThumbWheel::transmissionRatio" href="qtthumbwheel.html#transmissionRatio-prop" location="qtthumbwheel.cpp" virtual="non" meta="plain" const="true" static="false" overload="false" associated-property="transmissionRatio" type="double" signature="transmissionRatio() const"/>
+            <function access="public" threadsafety="unspecified" status="commendable" name="setTransmissionRatio" fullname="QtThumbWheel::setTransmissionRatio" href="qtthumbwheel.html#transmissionRatio-prop" location="qtthumbwheel.cpp" virtual="impure" meta="plain" const="false" static="false" overload="false" associated-property="transmissionRatio" type="void" signature="setTransmissionRatio(double r)">
+                <parameter left="double" right="" name="r" default=""/>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="cogCount" fullname="QtThumbWheel::cogCount" href="qtthumbwheel.html#cogCount-prop" location="qtthumbwheel.cpp" virtual="non" meta="plain" const="true" static="false" overload="false" associated-property="cogCount" type="int" signature="cogCount() const"/>
+            <function access="public" threadsafety="unspecified" status="commendable" name="setCogCount" fullname="QtThumbWheel::setCogCount" href="qtthumbwheel.html#cogCount-prop" location="qtthumbwheel.cpp" virtual="non" meta="plain" const="false" static="false" overload="false" associated-property="cogCount" type="void" signature="setCogCount(int c)">
+                <parameter left="int" right="" name="c" default=""/>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="limitedDrag" fullname="QtThumbWheel::limitedDrag" href="qtthumbwheel.html#limitedDrag-prop" location="qtthumbwheel.cpp" virtual="non" meta="plain" const="true" static="false" overload="false" associated-property="limitedDrag" type="bool" signature="limitedDrag() const"/>
+            <function access="public" threadsafety="unspecified" status="commendable" name="setLimitedDrag" fullname="QtThumbWheel::setLimitedDrag" href="qtthumbwheel.html#limitedDrag-prop" location="qtthumbwheel.cpp" virtual="non" meta="plain" const="false" static="false" overload="false" associated-property="limitedDrag" type="void" signature="setLimitedDrag(bool enabled)">
+                <parameter left="bool" right="" name="enabled" default=""/>
+            </function>
+        </class>
+        <page access="public" status="commendable" name="simple-example.html" href="simple-example.html" subtype="page" title="A simple example of the Thumb Wheel component" fulltitle="A simple example of the Thumb Wheel component" subtitle="" location="simple.qdoc"/>
+        <page access="public" status="commendable" name="index.html" href="index.html" subtype="page" title="Thumb Wheel" fulltitle="Thumb Wheel" subtitle="" location="index.qdoc">
+            <contents name="description" title="Description" level="1"/>
+            <contents name="classes" title="Classes" level="1"/>
+            <contents name="examples" title="Examples" level="1"/>
+            <contents name="tested-platforms" title="Tested platforms" level="1"/>
+            <contents name="screenshots" title="Screenshots" level="1"/>
+        </page>
+    </namespace>
+</INDEX>

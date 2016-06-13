@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- qtmmlwidget-2.4_1-opensource/src/qtmmlwidget.cpp -->
+<head>
+  <title>QtMmlWidget Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><img src="images/qt-logo.png" align="left" width="57" height="67" border="0" /></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a></td>
+</tr></table><h1 class="title">QtMmlWidget Class Reference</h1>
+<p>The QtMmlWidget class renders mathematical formulas written in MathML 2.0&#x2e; <a href="#details">More...</a></p>
+<pre> #include &lt;QtMmlWidget&gt;</pre><p>Inherits <a href="http://qt.nokia.com/doc/4.5/qframe.html">QFrame</a>.</p>
+<ul>
+<li><a href="qtmmlwidget-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"></div>enum <b><a href="qtmmlwidget.html#MmlFont-enum">MmlFont</a></b> { NormalFont, FrakturFont, SansSerifFont, ScriptFont, MonospaceFont, DoublestruckFont }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"></div><b><a href="qtmmlwidget.html#QtMmlWidget">QtMmlWidget</a></b> ( QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"></div><b><a href="qtmmlwidget.html#dtor.QtMmlWidget">~QtMmlWidget</a></b> ()</li>
+<li><div class="fn"></div>int <b><a href="qtmmlwidget.html#baseFontPointSize">baseFontPointSize</a></b> () const</li>
+<li><div class="fn"></div>void <b><a href="qtmmlwidget.html#clear">clear</a></b> ()</li>
+<li><div class="fn"></div>bool <b><a href="qtmmlwidget.html#drawFrames">drawFrames</a></b> () const</li>
+<li><div class="fn"></div>QString <b><a href="qtmmlwidget.html#fontName">fontName</a></b> ( MmlFont <i>type</i> ) const</li>
+<li><div class="fn"></div>void <b><a href="qtmmlwidget.html#setBaseFontPointSize">setBaseFontPointSize</a></b> ( int <i>size</i> )</li>
+<li><div class="fn"></div>bool <b><a href="qtmmlwidget.html#setContent">setContent</a></b> ( const QString &amp; <i>text</i>, QString * <i>errorMsg</i> = 0, int * <i>errorLine</i> = 0, int * <i>errorColumn</i> = 0 )</li>
+<li><div class="fn"></div>void <b><a href="qtmmlwidget.html#setDrawFrames">setDrawFrames</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"></div>void <b><a href="qtmmlwidget.html#setFontName">setFontName</a></b> ( MmlFont <i>type</i>, const QString &amp; <i>name</i> )</li>
+<li><div class="fn"></div>virtual QSize <b><a href="qtmmlwidget.html#sizeHint">sizeHint</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"></div>13 public functions inherited from <a href="http://qt.nokia.com/doc/4.5/qframe.html#public-functions">QFrame</a></li>
+<li><div class="fn"></div>207 public functions inherited from <a href="http://qt.nokia.com/doc/4.5/qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"></div>12 public functions inherited from <a href="http://qt.nokia.com/doc/4.5/qpaintdevice.html#public-functions">QPaintDevice</a></li>
+<li><div class="fn"></div>29 public functions inherited from <a href="http://qt.nokia.com/doc/4.5/qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"></div>6 properties inherited from <a href="http://qt.nokia.com/doc/4.5/qframe.html#properties">QFrame</a></li>
+<li><div class="fn"></div>57 properties inherited from <a href="http://qt.nokia.com/doc/4.5/qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"></div>1 property inherited from <a href="http://qt.nokia.com/doc/4.5/qobject.html#properties">QObject</a></li>
+<li><div class="fn"></div>19 public slots inherited from <a href="http://qt.nokia.com/doc/4.5/qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"></div>1 public slot inherited from <a href="http://qt.nokia.com/doc/4.5/qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"></div>1 signal inherited from <a href="http://qt.nokia.com/doc/4.5/qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"></div>1 signal inherited from <a href="http://qt.nokia.com/doc/4.5/qobject.html#signals">QObject</a></li>
+<li><div class="fn"></div>1 public type inherited from <a href="http://qt.nokia.com/doc/4.5/qobject.html#public-variables">QObject</a></li>
+<li><div class="fn"></div>4 static public members inherited from <a href="http://qt.nokia.com/doc/4.5/qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"></div>4 static public members inherited from <a href="http://qt.nokia.com/doc/4.5/qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"></div>37 protected functions inherited from <a href="http://qt.nokia.com/doc/4.5/qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"></div>1 protected function inherited from <a href="http://qt.nokia.com/doc/4.5/qpaintdevice.html#protected-functions">QPaintDevice</a></li>
+<li><div class="fn"></div>7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.5/qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"></div>1 protected slot inherited from <a href="http://qt.nokia.com/doc/4.5/qwidget.html#protected-slots">QWidget</a></li>
+<li><div class="fn"></div>1 protected type inherited from <a href="http://qt.nokia.com/doc/4.5/qpaintdevice.html#protected-variables">QPaintDevice</a></li>
+<li><div class="fn"></div>2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.5/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QtMmlWidget class renders mathematical formulas written in MathML 2.0&#x2e;</p>
+<p>QtMmlWidget implements the Presentation Markup subset of the MathML 2.0 specification, with a few <a href="overview.html">exceptions</a>.</p>
+<pre> QtMmlWidget *mmlWidget = new QtMmlWidget(this);
+ QString errorMsg;
+ int errorLine;
+ int errorColumn;
+ bool ok = mmlWidget-&gt;setContent(mmlText, &amp;errorMsg, &amp;errorLine, &amp;errorColumn);
+ if (!ok) {
+     qWarning(&quot;MathML error: %s, Line: %d, Column: %d&quot;,
+              errorMsg.latin1(), errorLine, errorColumn);
+ }</pre>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="MmlFont-enum"></a>enum QtMmlWidget::MmlFont</h3>
+<p>This ennumerated type is used in <a href="qtmmlwidget.html#fontName">fontName</a>() and <a href="qtmmlwidget.html#setFontName">setFontName</a>() to specify a font type.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QtMmlWidget::NormalFont</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The default font type, used to render expressions for which no mathvariant or fontfamily is specified, or for which the &quot;normal&quot; mathvariant is specified.</td></tr>
+<tr><td valign="top"><tt>QtMmlWidget::FrakturFont</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The font type used to render expressions for which the &quot;fraktur&quot; mathvariant is specified.</td></tr>
+<tr><td valign="top"><tt>QtMmlWidget::SansSerifFont</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The font type used to render expressions for which the &quot;sans-serif&quot; mathvariant is specified.</td></tr>
+<tr><td valign="top"><tt>QtMmlWidget::ScriptFont</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The font type used to render expressions for which the &quot;script&quot; mathvariant is specified.</td></tr>
+<tr><td valign="top"><tt>QtMmlWidget::MonospaceFont</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">The font type used to render expressions for which the &quot;monospace&quot; mathvariant is specified.</td></tr>
+<tr><td valign="top"><tt>QtMmlWidget::DoublestruckFont</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">The font type used to render expressions for which the &quot;doublestruck&quot; mathvariant is specified.</td></tr>
+</table></p>
+<p>See also <a href="qtmmlwidget.html#setFontName">setFontName</a>(), <a href="qtmmlwidget.html#fontName">fontName</a>(), <a href="qtmmlwidget.html#setBaseFontPointSize">setBaseFontPointSize</a>(), and <a href="qtmmlwidget.html#baseFontPointSize">baseFontPointSize</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QtMmlWidget"></a>QtMmlWidget::QtMmlWidget ( <a href="http://qt.nokia.com/doc/4.5/qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qtmmlwidget.html">QtMmlWidget</a> object. The <i>parent</i> parameter is passed to <a href="http://qt.nokia.com/doc/4.5/qframe.html">QFrame</a>'s constructor.</p>
+<h3 class="fn"><a name="dtor.QtMmlWidget"></a>QtMmlWidget::~QtMmlWidget ()</h3>
+<p>Destructs a <a href="qtmmlwidget.html">QtMmlWidget</a> object.</p>
+<h3 class="fn"><a name="baseFontPointSize"></a>int QtMmlWidget::baseFontPointSize () const</h3>
+<p>Returns the point size of the font used to render expressions whose scriptlevel is 0.</p>
+<p>See also <a href="qtmmlwidget.html#setBaseFontPointSize">setBaseFontPointSize</a>(), <a href="qtmmlwidget.html#fontName">fontName</a>(), and <a href="qtmmlwidget.html#setFontName">setFontName</a>().</p>
+<h3 class="fn"><a name="clear"></a>void QtMmlWidget::clear ()</h3>
+<p>Clears the contents of this widget.</p>
+<h3 class="fn"><a name="drawFrames"></a>bool QtMmlWidget::drawFrames () const</h3>
+<p>Returns true if each expression should be drawn with a red bounding rectangle; otherwise returns false. This is mostly useful for debugging MathML expressions.</p>
+<p>See also <a href="qtmmlwidget.html#setDrawFrames">setDrawFrames</a>().</p>
+<h3 class="fn"><a name="fontName"></a><a href="http://qt.nokia.com/doc/4.5/qstring.html">QString</a> QtMmlWidget::fontName ( <a href="qtmmlwidget.html#MmlFont-enum">MmlFont</a> <i>type</i> ) const</h3>
+<p>Returns the name of the font used to render the font <i>type</i>.</p>
+<p>See also <a href="qtmmlwidget.html#setFontName">setFontName</a>(), <a href="qtmmlwidget.html#setBaseFontPointSize">setBaseFontPointSize</a>(), <a href="qtmmlwidget.html#baseFontPointSize">baseFontPointSize</a>(), and <a href="qtmmlwidget.html#MmlFont-enum">QtMmlWidget::MmlFont</a>.</p>
+<h3 class="fn"><a name="setBaseFontPointSize"></a>void QtMmlWidget::setBaseFontPointSize ( int <i>size</i> )</h3>
+<p>Sets the point <i>size</i> of the font used to render expressions whose scriptlevel is 0.</p>
+<p>See also <a href="qtmmlwidget.html#baseFontPointSize">baseFontPointSize</a>(), <a href="qtmmlwidget.html#fontName">fontName</a>(), and <a href="qtmmlwidget.html#setFontName">setFontName</a>().</p>
+<h3 class="fn"><a name="setContent"></a>bool QtMmlWidget::setContent ( const <a href="http://qt.nokia.com/doc/4.5/qstring.html">QString</a> &amp; <i>text</i>, <a href="http://qt.nokia.com/doc/4.5/qstring.html">QString</a> * <i>errorMsg</i> = 0, int * <i>errorLine</i> = 0, int * <i>errorColumn</i> = 0 )</h3>
+<p>Sets the MathML expression to be rendered. The expression is given in the string <i>text</i>. If the expression is successfully parsed, this method returns true; otherwise it returns false. If an error occured <i>errorMsg</i> is set to a diagnostic message, while <i>errorLine</i> and <i>errorColumn</i> contain the location of the error. Any of <i>errorMsg</i>, <i>errorLine</i> and <i>errorColumn</i> may be 0, in which case they are not set.</p>
+<p><i>text</i> should contain MathML 2.0 presentation markup elements enclosed in a &lt;math&gt; element.</p>
+<h3 class="fn"><a name="setDrawFrames"></a>void QtMmlWidget::setDrawFrames ( bool <i>b</i> )</h3>
+<p>If <i>b</i> is true, draws a red bounding rectangle around each expression; if <i>b</i> is false, no such rectangle is drawn. This is mostly useful for debugging MathML expressions.</p>
+<p>See also <a href="qtmmlwidget.html#drawFrames">drawFrames</a>().</p>
+<h3 class="fn"><a name="setFontName"></a>void QtMmlWidget::setFontName ( <a href="qtmmlwidget.html#MmlFont-enum">MmlFont</a> <i>type</i>, const <a href="http://qt.nokia.com/doc/4.5/qstring.html">QString</a> &amp; <i>name</i> )</h3>
+<p>Sets the name of the font used to render the font <i>type</i> to <i>name</i>.</p>
+<p>See also <a href="qtmmlwidget.html#fontName">fontName</a>(), <a href="qtmmlwidget.html#setBaseFontPointSize">setBaseFontPointSize</a>(), <a href="qtmmlwidget.html#baseFontPointSize">baseFontPointSize</a>(), and <a href="qtmmlwidget.html#MmlFont-enum">QtMmlWidget::MmlFont</a>.</p>
+<h3 class="fn"><a name="sizeHint"></a><a href="http://qt.nokia.com/doc/4.5/qsize.html">QSize</a> QtMmlWidget::sizeHint () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the size of the formula in pixels.</p>
+<p>Reimplemented from <a href="http://qt.nokia.com/doc/4.5/qwidget.html#sizeHint-prop">QWidget</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%" align="left">Copyright &copy; 2009 Nokia Corporation and/or its subsidiary(-ies)</td>
+<td width="40%" align="center"><a href="http://qt.nokia.com/doc/trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt Solutions</div></td>
+</tr></table></div></address></body>
+</html>

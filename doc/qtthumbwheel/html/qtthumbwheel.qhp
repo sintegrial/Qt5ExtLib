@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+    <namespace>com.nokia.qtsolutions.qtthumbwheel_2.4</namespace>
+    <virtualFolder>qdoc</virtualFolder>
+    <customFilter name="Qt Solutions: Thumb Wheel">
+        <filterAttribute>qt</filterAttribute>
+        <filterAttribute>solutions</filterAttribute>
+        <filterAttribute>qtthumbwheel</filterAttribute>
+    </customFilter>
+    <filterSection>
+        <filterAttribute>qt</filterAttribute>
+        <filterAttribute>solutions</filterAttribute>
+        <filterAttribute>qtthumbwheel</filterAttribute>
+        <toc>
+            <section ref="index.html" title="Qt Solutions: Thumb Wheel Documentation">
+                <section ref="simple-example.html" title="A simple example of the Thumb Wheel component"/>
+                <section ref="index.html" title="Thumb Wheel"/>
+            </section>
+        </toc>
+        <keywords>
+            <keyword name="A simple example of the Thumb Wheel component" id="A simple example of the Thumb Wheel component" ref="simple-example.html"/>
+            <keyword name="QtThumbWheel" id="QtThumbWheel" ref="qtthumbwheel.html"/>
+            <keyword name="cogCount" id="QtThumbWheel::cogCount" ref="qtthumbwheel.html#cogCount-prop"/>
+            <keyword name="limitedDrag" id="QtThumbWheel::limitedDrag" ref="qtthumbwheel.html#limitedDrag-prop"/>
+            <keyword name="setCogCount" id="QtThumbWheel::setCogCount" ref="qtthumbwheel.html#cogCount-prop"/>
+            <keyword name="setLimitedDrag" id="QtThumbWheel::setLimitedDrag" ref="qtthumbwheel.html#limitedDrag-prop"/>
+            <keyword name="setTransmissionRatio" id="QtThumbWheel::setTransmissionRatio" ref="qtthumbwheel.html#transmissionRatio-prop"/>
+            <keyword name="setWrapsAround" id="QtThumbWheel::setWrapsAround" ref="qtthumbwheel.html#wrapsAround-prop"/>
+            <keyword name="transmissionRatio" id="QtThumbWheel::transmissionRatio" ref="qtthumbwheel.html#transmissionRatio-prop"/>
+            <keyword name="wrapsAround" id="QtThumbWheel::wrapsAround" ref="qtthumbwheel.html#wrapsAround-prop"/>
+            <keyword name="~QtThumbWheel" id="QtThumbWheel::~QtThumbWheel" ref="qtthumbwheel.html#dtor.QtThumbWheel"/>
+            <keyword name="Thumb Wheel" id="Thumb Wheel" ref="index.html"/>
+        </keywords>
+        <files>
+            <file>index.html</file>
+            <file>qtthumbwheel.html</file>
+            <file>images/qtthumbwheel-h.png</file>
+            <file>simple-example.html</file>
+            <file>classic.css</file>
+            <file>images/qt-logo.png</file>
+            <file>images/qtthumbwheel-h.png</file>
+        </files>
+    </filterSection>
+</QtHelpProject>

@@ -1,0 +1,37 @@
+/*!
+	\page index.html
+	\title Color Combo Box
+
+    	\section1 Description
+	
+            A combobox widget with colors and texts.
+        
+
+	
+        
+
+    	
+	\section1 Classes
+	    \list
+	 \i  QtColorComboBox\endlist
+	
+    
+
+    	
+
+    	
+    		\section1 Tested platforms
+		\list
+		\i Qt 4.4, 4.5 / Windows XP / MSVC.NET 2005
+		    \i Qt 4.4, 4.5 / Linux / gcc
+		    \i Qt 4.4, 4.5 / MacOS X 10.5 / gcc
+		    \endlist
+
+    	
+
+	
+		\section1 Screenshots
+
+    		\img qtcolorcombobox.png
+		    
+	*/

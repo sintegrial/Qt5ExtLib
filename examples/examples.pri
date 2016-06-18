@@ -4,6 +4,7 @@ QT += core gui widgets
 INCLUDEPATH += $$PWD/../src/qtwidgets
 INCLUDEPATH += $$PWD/../src/qtpropertybrowser
 INCLUDEPATH += $$PWD/../src/qtgradienteditor
+INCLUDEPATH += $$PWD/../src/qtimagefilters
 
 DESTDIR = $$OUT_PWD/../../../examples
 

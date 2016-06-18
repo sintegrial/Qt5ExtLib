@@ -40,4 +40,7 @@ SOURCES += $$files($$PWD/findwidget/*.cpp)
 HEADERS += $$files($$PWD/findwidget/*.h)
 RESOURCES += $$files($$PWD/findwidget/*.qrc)
 
+# image filters
+SOURCES += $$files($$PWD/qtimagefilters/*.cpp)
+HEADERS += $$files($$PWD/qtimagefilters/*.h)
 

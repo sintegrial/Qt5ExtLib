@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE QDOCINDEX>
+<INDEX url="" title="Qt Solutions: Image Filters Documentation" version="">
+    <namespace access="public" threadsafety="unspecified" status="commendable" name="" href="" location="" module="">
+        <class access="public" threadsafety="unspecified" status="commendable" name="QtImageFilter" href="qtimagefilter.html" location="qtimagefilter.h" bases="" module="">
+            <enum access="public" threadsafety="unspecified" status="commendable" name="FilterOption" fullname="QtImageFilter::FilterOption" href="qtimagefilter.html#FilterOption-enum" location="qtimagefilter.h">
+                <value name="FilterChannels" value="1"></value>
+                <value name="FilterBorderPolicy" value="2"></value>
+                <value name="ConvolutionDivisor" value="3"></value>
+                <value name="ConvolutionBias" value="4"></value>
+                <value name="ConvolutionKernelMatrix" value="5"></value>
+                <value name="Radius" value="6"></value>
+                <value name="Center" value="7"></value>
+                <value name="Force" value="8"></value>
+                <value name="UserOption" value="0x100"></value>
+            </enum>
+            <function access="public" threadsafety="unspecified" status="commendable" name="option" fullname="QtImageFilter::option" href="qtimagefilter.html#option" location="qtimagefilter.h" virtual="impure" meta="plain" const="true" static="false" overload="false" type="QVariant" signature="option(int filteroption) const">
+                <parameter left="int" right="" name="filteroption" default=""></parameter>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="setOption" fullname="QtImageFilter::setOption" href="qtimagefilter.html#setOption" location="qtimagefilter.h" virtual="impure" meta="plain" const="false" static="false" overload="false" type="bool" signature="setOption(int filteroption, const QVariant &amp; value)">
+                <parameter left="int" right="" name="filteroption" default=""></parameter>
+                <parameter left="const QVariant &amp;" right="" name="value" default=""></parameter>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="supportsOption" fullname="QtImageFilter::supportsOption" href="qtimagefilter.html#supportsOption" location="qtimagefilter.h" virtual="impure" meta="plain" const="true" static="false" overload="false" type="bool" signature="supportsOption(int filteroption) const">
+                <parameter left="int" right="" name="filteroption" default=""></parameter>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="apply" fullname="QtImageFilter::apply" href="qtimagefilter.html#apply" location="qtimagefilter.h" virtual="pure" meta="plain" const="true" static="false" overload="false" type="QImage" signature="apply(const QImage &amp; image, const QRect &amp; clipRectangle) const">
+                <parameter left="const QImage &amp;" right="" name="image" default=""></parameter>
+                <parameter left="const QRect &amp;" right="" name="clipRectangle" default="QRect()"></parameter>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="name" fullname="QtImageFilter::name" href="qtimagefilter.html#name" location="qtimagefilter.h" virtual="pure" meta="plain" const="true" static="false" overload="false" type="QString" signature="name() const"></function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="description" fullname="QtImageFilter::description" href="qtimagefilter.html#description" location="qtimagefilter.h" virtual="impure" meta="plain" const="true" static="false" overload="false" type="QString" signature="description() const"></function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="~QtImageFilter" fullname="QtImageFilter::~QtImageFilter" href="qtimagefilter.html#dtor.QtImageFilter" location="qtimagefilter.h" virtual="impure" meta="destructor" const="false" static="false" overload="false" type="" signature="~QtImageFilter()"></function>
+        </class>
+        <class access="public" threadsafety="unspecified" status="commendable" name="QtImageFilterFactory" href="qtimagefilterfactory.html" location="qtimagefilter.h" bases="" module="">
+            <typedef access="public" threadsafety="unspecified" status="commendable" name="ImageFilterFactoryFunction" fullname="QtImageFilterFactory::ImageFilterFactoryFunction" href="qtimagefilterfactory.html#ImageFilterFactoryFunction-typedef" location="qtimagefilter.h"></typedef>
+            <function access="public" threadsafety="unspecified" status="commendable" name="createImageFilter" fullname="QtImageFilterFactory::createImageFilter" href="qtimagefilterfactory.html#createImageFilter" location="qtimagefilter.h" virtual="non" meta="plain" const="false" static="true" overload="false" type="QtImageFilter *" signature="createImageFilter(const QString &amp; name)">
+                <parameter left="const QString &amp;" right="" name="name" default=""></parameter>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="registerImageFilter" fullname="QtImageFilterFactory::registerImageFilter" href="qtimagefilterfactory.html#registerImageFilter" location="qtimagefilterfactory.cpp" virtual="non" meta="plain" const="false" static="true" overload="false" type="void" signature="registerImageFilter(const QString &amp; name, ImageFilterFactoryFunction function)">
+                <parameter left="const QString &amp;" right="" name="name" default=""></parameter>
+                <parameter left="ImageFilterFactoryFunction" right="" name="function" default=""></parameter>
+            </function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="imageFilterList" fullname="QtImageFilterFactory::imageFilterList" href="qtimagefilterfactory.html#imageFilterList" location="qtimagefilter.h" virtual="non" meta="plain" const="false" static="true" overload="false" type="QStringList" signature="imageFilterList()"></function>
+            <function access="public" threadsafety="unspecified" status="commendable" name="registerImageFilter" fullname="QtImageFilterFactory::registerImageFilter" href="qtimagefilterfactory.html#registerImageFilter-2" location="qtimagefilter.h" virtual="non" meta="plain" const="false" static="true" overload="true" overload-number="2" type="void" signature="registerImageFilter(const QString &amp; name)">
+                <parameter left="const QString &amp;" right="" name="name" default=""></parameter>
+            </function>
+        </class>
+        <function access="public" threadsafety="unspecified" status="commendable" name="qtRegisterImageFilter" href="qtimagefilterfactory.html#qtRegisterImageFilter" location="qtimagefilter.h" virtual="non" meta="plain" const="false" static="false" overload="false" relates="QtImageFilterFactory" type="void" signature="qtRegisterImageFilter(const QString &amp; name, T * dummy)">
+            <parameter left="const QString &amp;" right="" name="name" default=""></parameter>
+            <parameter left="T *" right="" name="dummy" default="0"></parameter>
+        </function>
+        <page access="public" status="commendable" name="index.html" href="index.html" subtype="page" title="Image Filters" fulltitle="Image Filters" subtitle="" location="index.qdoc">
+            <contents name="description" title="Description" level="1"></contents>
+            <contents name="classes" title="Classes" level="1"></contents>
+            <contents name="tested-platforms" title="Tested platforms" level="1"></contents>
+            <contents name="screenshots" title="Screenshots" level="1"></contents>
+        </page>
+    </namespace>
+</INDEX>

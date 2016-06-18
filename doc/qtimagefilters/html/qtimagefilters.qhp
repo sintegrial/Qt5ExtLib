@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+    <namespace>com.trolltech.qtsolutions.qtimagefilters_2.1</namespace>
+    <virtualFolder>qdoc</virtualFolder>
+    <customFilter name="Qt Solutions: Image Filters">
+        <filterAttribute>qt</filterAttribute>
+        <filterAttribute>solutions</filterAttribute>
+        <filterAttribute>qtimagefilters</filterAttribute>
+    </customFilter>
+    <filterSection>
+        <filterAttribute>qt</filterAttribute>
+        <filterAttribute>solutions</filterAttribute>
+        <filterAttribute>qtimagefilters</filterAttribute>
+        <toc>
+            <section ref="index.html" title="Qt Solutions: Image Filters Documentation">
+                <section ref="index.html" title="Image Filters"></section>
+            </section>
+        </toc>
+        <keywords>
+            <keyword name="Image Filters" id="Image Filters" ref="index.html"></keyword>
+            <keyword name="QtImageFilter" id="QtImageFilter" ref="qtimagefilter.html"></keyword>
+            <keyword name="QtImageFilter::FilterOption" id="QtImageFilter::FilterOption" ref="qtimagefilter.html#FilterOption-enum"></keyword>
+            <keyword name="QtImageFilter::FilterChannels" id="QtImageFilter::FilterChannels" ref="qtimagefilter.html#FilterOption-enum"></keyword>
+            <keyword name="QtImageFilter::FilterBorderPolicy" id="QtImageFilter::FilterBorderPolicy" ref="qtimagefilter.html#FilterOption-enum"></keyword>
+            <keyword name="QtImageFilter::ConvolutionDivisor" id="QtImageFilter::ConvolutionDivisor" ref="qtimagefilter.html#FilterOption-enum"></keyword>
+            <keyword name="QtImageFilter::ConvolutionBias" id="QtImageFilter::ConvolutionBias" ref="qtimagefilter.html#FilterOption-enum"></keyword>
+            <keyword name="QtImageFilter::ConvolutionKernelMatrix" id="QtImageFilter::ConvolutionKernelMatrix" ref="qtimagefilter.html#FilterOption-enum"></keyword>
+            <keyword name="QtImageFilter::Radius" id="QtImageFilter::Radius" ref="qtimagefilter.html#FilterOption-enum"></keyword>
+            <keyword name="QtImageFilter::Center" id="QtImageFilter::Center" ref="qtimagefilter.html#FilterOption-enum"></keyword>
+            <keyword name="QtImageFilter::Force" id="QtImageFilter::Force" ref="qtimagefilter.html#FilterOption-enum"></keyword>
+            <keyword name="QtImageFilter::UserOption" id="QtImageFilter::UserOption" ref="qtimagefilter.html#FilterOption-enum"></keyword>
+            <keyword name="apply" id="QtImageFilter::apply" ref="qtimagefilter.html#apply"></keyword>
+            <keyword name="description" id="QtImageFilter::description" ref="qtimagefilter.html#description"></keyword>
+            <keyword name="name" id="QtImageFilter::name" ref="qtimagefilter.html#name"></keyword>
+            <keyword name="option" id="QtImageFilter::option" ref="qtimagefilter.html#option"></keyword>
+            <keyword name="setOption" id="QtImageFilter::setOption" ref="qtimagefilter.html#setOption"></keyword>
+            <keyword name="supportsOption" id="QtImageFilter::supportsOption" ref="qtimagefilter.html#supportsOption"></keyword>
+            <keyword name="~QtImageFilter" id="QtImageFilter::~QtImageFilter" ref="qtimagefilter.html#dtor.QtImageFilter"></keyword>
+            <keyword name="QtImageFilterFactory" id="QtImageFilterFactory" ref="qtimagefilterfactory.html"></keyword>
+            <keyword name="QtImageFilterFactory::ImageFilterFactoryFunction" id="QtImageFilterFactory::ImageFilterFactoryFunction" ref="qtimagefilterfactory.html#ImageFilterFactoryFunction-typedef"></keyword>
+            <keyword name="createImageFilter" id="QtImageFilterFactory::createImageFilter" ref="qtimagefilterfactory.html#createImageFilter"></keyword>
+            <keyword name="imageFilterList" id="QtImageFilterFactory::imageFilterList" ref="qtimagefilterfactory.html#imageFilterList"></keyword>
+            <keyword name="registerImageFilter" id="QtImageFilterFactory::registerImageFilter" ref="qtimagefilterfactory.html#registerImageFilter"></keyword>
+            <keyword name="qtRegisterImageFilter" id="qtRegisterImageFilter" ref="qtimagefilterfactory.html#qtRegisterImageFilter"></keyword>
+        </keywords>
+        <files>
+            <file>index.html</file>
+            <file>images/lena-edge.jpg</file>
+            <file>qtimagefilter.html</file>
+            <file>qtimagefilterfactory.html</file>
+            <file>images/lena-edge.jpg</file>
+            <file>classic.css</file>
+            <file>images/qt-logo.png</file>
+        </files>
+    </filterSection>
+</QtHelpProject>

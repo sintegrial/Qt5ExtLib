@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- qtimagefilters-2.1-opensource/src/qtimagefilter.cpp -->
+<head>
+  <title>QtImageFilter Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><img src="images/qt-logo.png" align="left" width="57" height="67" border="0" /></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a></td>
+</tr></table><h1 class="title">QtImageFilter Class Reference</h1>
+<p>The QtImageFilter class is an abstract interface for image filter implementations. <a href="#details">More...</a></p>
+<pre> #include &lt;QtImageFilter&gt;</pre><ul>
+<li><a href="qtimagefilter-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qtimagefilter.html#FilterOption-enum">FilterOption</a></b> { FilterChannels, FilterBorderPolicy, ConvolutionDivisor, ConvolutionBias, ..., UserOption }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>virtual <b><a href="qtimagefilter.html#dtor.QtImageFilter">~QtImageFilter</a></b> ()</li>
+<li><div class="fn"/>virtual QImage <b><a href="qtimagefilter.html#apply">apply</a></b> ( const QImage &amp; <i>image</i>, const QRect &amp; <i>clipRectangle</i> = QRect() ) const = 0</li>
+<li><div class="fn"/>virtual QString <b><a href="qtimagefilter.html#description">description</a></b> () const</li>
+<li><div class="fn"/>virtual QString <b><a href="qtimagefilter.html#name">name</a></b> () const = 0</li>
+<li><div class="fn"/>virtual QVariant <b><a href="qtimagefilter.html#option">option</a></b> ( int <i>filteroption</i> ) const</li>
+<li><div class="fn"/>virtual bool <b><a href="qtimagefilter.html#setOption">setOption</a></b> ( int <i>filteroption</i>, const QVariant &amp; <i>value</i> )</li>
+<li><div class="fn"/>virtual bool <b><a href="qtimagefilter.html#supportsOption">supportsOption</a></b> ( int <i>filteroption</i> ) const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QtImageFilter class is an abstract interface for image filter implementations.</p>
+<p>QtImageFilter is part of the QtImageFilters solution which by default supports many popular image filters, among these are gaussian blurring, embossing (see image below), sharpening, defocus, punch/pinch and convolution filters.</p>
+<p align="center"><img src="images/lena-edge.jpg" /></p><p>The documentation for the <a href="qtimagefilterfactory.html#createImageFilter">QtImageFilterFactory::createImageFilter</a>() function provides a complete list of all the supported image filters.</p>
+<p>An image filter can be configured by setting various options. The options are set by associating a value from the <a href="qtimagefilter.html#FilterOption-enum">FilterOption</a> enum with a <a href="http://doc.trolltech.com/4.4/qvariant.html">QVariant</a> value using the <a href="qtimagefilter.html#setOption">setOption</a>() function. The <a href="qtimagefilter.html#option">option</a>() function returns the variant value of the given <a href="qtimagefilter.html#FilterOption-enum">FilterOption</a> value, while the <a href="qtimagefilter.html#supportsOption">supportsOption</a>() function determines whether the given <a href="qtimagefilter.html#FilterOption-enum">FilterOption</a> value is supported by this image filter.</p>
+<p>The image filter's name and description can be retrieved using the <a href="qtimagefilter.html#name">name</a>() and <a href="qtimagefilter.html#description">description</a>() functions respectively.The <a href="qtimagefilter.html#apply">apply</a>() function is used by the QtImageFilters framework to apply the image filters.</p>
+<p>Developers can extend the framework with their own custom image filters by deriving from the QtImageFilter class. For example, the code below implements a simple mirror filter:</p>
+<pre> class MirrorFilter : public QtImageFilter {
+ public:
+     enum MirrorFilterOption {
+         MirrorHorizontal = UserOption,
+         MirrorVertical
+     };
+
+     MirrorFilter()
+     {
+         m_mirrorVertical = false;
+         m_mirrorHorizontal = true;
+     }
+
+     QImage apply(const QImage &amp;img, const QRect&amp; clipRect <span class="comment">/*= QRect()*/</span> ) const
+     {
+         Q_UNUSED(clipRect);
+         return img.mirrored(m_mirrorHorizontal, m_mirrorVertical);
+     }
+
+     QString name() const { return QLatin1String(&quot;Mirror&quot;); }
+
+     QVariant option(int filteroption) const
+     {
+         switch ((MirrorFilterOption)filteroption) {
+         case MirrorVertical:
+             return QVariant(m_mirrorVertical);
+         break;
+         case MirrorHorizontal:
+             return QVariant(m_mirrorHorizontal);
+         break;
+         default:
+             break;
+         }
+         return QVariant();
+     }
+
+     bool setOption(int filteroption, const QVariant &amp;value)
+     {
+         switch ((MirrorFilterOption)filteroption) {
+             case MirrorVertical:
+                 m_mirrorVertical = value.toBool();
+             break;
+             case MirrorHorizontal:
+                 m_mirrorHorizontal = value.toBool();
+             break;
+             default:
+                 break;
+         }
+         return true;
+     }
+
+     bool supportsOption(int option) const
+     {
+         bool supports = false;
+         switch ((MirrorFilterOption)option) {
+             case MirrorVertical:
+             case MirrorHorizontal:
+                 supports = true;
+             break;
+             default:
+                 break;
+         }
+         return supports;
+     }
+
+     QString description() const { return QObject::tr(&quot;A simple mirroring filter.&quot;); }
+
+ private:
+     bool m_mirrorVertical;
+     bool m_mirrorHorizontal;
+ };</pre>
+<p>A custom image filter must implement the pure virtual <a href="qtimagefilter.html#apply">apply</a>() and <a href="qtimagefilter.html#name">name</a>() functions. In addition, the custom mirror filter above reimplements the <a href="qtimagefilter.html#option">option</a>(), <a href="qtimagefilter.html#setOption">setOption</a>() and <a href="qtimagefilter.html#supportsOption">supportsOption</a>() functions inherited from the QtImageFilter class. Custom image filters can be configured just like any other image filter. In addition, the mirror filter provides a description of itself by reimplementing the <a href="qtimagefilter.html#description">description</a>() function.</p>
+<p>Finally, our custom filter implements a MirrorFilterOption enum and a couple of private variables.</p>
+<p>Before it can be used, a custom image filter must be registered using the <a href="qtimagefilterfactory.html">QtImageFilterFactory</a> class. Once it is registered, the filter can be created just like any other image filter, using the <a href="qtimagefilterfactory.html#createImageFilter">QtImageFilterFactory::createImageFilter</a>() function.</p>
+<p>See also <a href="qtimagefilterfactory.html">QtImageFilterFactory</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="FilterOption-enum"></a>enum QtImageFilter::FilterOption</h3>
+<p>This enum describes the various configuring options that can be set on a filter.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QtImageFilter::FilterChannels</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The color channel(s) to perform the filtering on. A string consisting of zero or one entity of each of the characters r,g,b,a.</td></tr>
+<tr><td valign="top"><tt>QtImageFilter::FilterBorderPolicy</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Describes the behavior of the convolution when the convolution stencil is not within the bounds of the image. For example, if the convolution stencil is a 5x5 grid, and its central element is positioned at the image coordinates (0, 0), then the topleft element of the stencil will reference the image coordinates (-2, -2), and the bottom-right element of the stencil will reference the image coordinates (2, 2). For this specific case the 2 left-most columns and 2 top-most rows in the stencil grid will be references to pixels that are outside the image coordinates. This option specifies how the filter should behave in these special conditions:<ul>
+<li>If the policy is set to &quot;mirror&quot;, the pixels is chosen in such a way that the image is considered to be mirrored around its edges.</li>
+<li>If the policy is set to &quot;extend&quot;, the pixel value is chosen in such a way that the border colors of the image is considered to be extended infinitely.</li>
+<li>If the policy is set to &quot;wrap&quot;, the pixel value is chosen in such a way that the image is considered to be wrapped. This is optimal if you want to perform filtering on tiled images.</li>
+</ul>
+</td></tr>
+<tr><td valign="top"><tt>QtImageFilter::ConvolutionDivisor</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">An integer number.</td></tr>
+<tr><td valign="top"><tt>QtImageFilter::ConvolutionBias</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">An integer number.</td></tr>
+<tr><td valign="top"><tt>QtImageFilter::ConvolutionKernelMatrix</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">A QtConvolutionKernelMatrix matrix.</td></tr>
+<tr><td valign="top"><tt>QtImageFilter::Radius</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">A double number.</td></tr>
+<tr><td valign="top"><tt>QtImageFilter::Force</tt></td><td align="center" valign="top"><tt>8</tt></td><td valign="top">A double number.</td></tr>
+<tr><td valign="top"><tt>QtImageFilter::Center</tt></td><td align="center" valign="top"><tt>7</tt></td><td valign="top">A <a href="http://doc.trolltech.com/4.4/qpointf.html">QPointF</a> object.</td></tr>
+<tr><td valign="top"><tt>QtImageFilter::UserOption</tt></td><td align="center" valign="top"><tt>0x100</tt></td><td valign="top">The first option that can be used for application-specific purposes.</td></tr>
+</table></p>
+<p>See also <a href="qtimagefilter.html#option">option</a>(), <a href="qtimagefilter.html#setOption">setOption</a>(), and <a href="qtimagefilter.html#supportsOption">supportsOption</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="dtor.QtImageFilter"></a>QtImageFilter::~QtImageFilter ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys this image filter.</p>
+<h3 class="fn"><a name="apply"></a><a href="http://doc.trolltech.com/4.4/qimage.html">QImage</a> QtImageFilter::apply ( const <a href="http://doc.trolltech.com/4.4/qimage.html">QImage</a> &amp; <i>image</i>, const <a href="http://doc.trolltech.com/4.4/qrect.html">QRect</a> &amp; <i>clipRectangle</i> = QRect() ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This function is used by the QtImageFilters framework to apply the filter on the given <i>image</i>, returning the resulting filtered image. The <i>clipRectangle</i> parameter delimits the area that is filtered.</p>
+<p>This is a pure virtual function that must be implemented in derived classes. The format of the returned image should be the same as the input image format (unless documented otherwise).</p>
+<h3 class="fn"><a name="description"></a><a href="http://doc.trolltech.com/4.4/qstring.html">QString</a> QtImageFilter::description () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns a brief description of the image filter, usually only one sentence.</p>
+<p>See also <a href="qtimagefilter.html#name">name</a>().</p>
+<h3 class="fn"><a name="name"></a><a href="http://doc.trolltech.com/4.4/qstring.html">QString</a> QtImageFilter::name () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the name of the filter which also is an unique identifier.</p>
+<p>This is a pure virtual function that must be implemented in derived classes.</p>
+<p>See also <a href="qtimagefilter.html#description">description</a>().</p>
+<h3 class="fn"><a name="option"></a><a href="http://doc.trolltech.com/4.4/qvariant.html">QVariant</a> QtImageFilter::option ( int <i>filteroption</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Retrieves the variant value of the given <i>filteroption</i>.</p>
+<p>See also <a href="qtimagefilter.html#setOption">setOption</a>(), <a href="qtimagefilter.html#supportsOption">supportsOption</a>(), and <a href="qtimagefilter.html#FilterOption-enum">FilterOption</a>.</p>
+<h3 class="fn"><a name="setOption"></a>bool QtImageFilter::setOption ( int <i>filteroption</i>, const <a href="http://doc.trolltech.com/4.4/qvariant.html">QVariant</a> &amp; <i>value</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the given <i>filteroption</i> on this image filter, and returns true if the configuring succeeds.</p>
+<p>The possible values for the <i>value</i> parameter depends on the given filter option. If <i>value</i> contain an illegal value, or if the filter does not support the given <i>filteroption</i>, the function returns false.</p>
+<p>See also <a href="qtimagefilter.html#option">option</a>(), <a href="qtimagefilter.html#supportsOption">supportsOption</a>(), and <a href="qtimagefilter.html#FilterOption-enum">FilterOption</a>.</p>
+<h3 class="fn"><a name="supportsOption"></a>bool QtImageFilter::supportsOption ( int <i>filteroption</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns true if the current image filter supports the given <i>filteroption</i>, otherwise returns false.</p>
+<p>Reimplement this function to reflect the options that the image filter supports. The default implementation returns false.</p>
+<p>See also <a href="qtimagefilter.html#setOption">setOption</a>() and <a href="qtimagefilter.html#FilterOption-enum">FilterOption</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%" align="left">Copyright &copy; 2009 Nokia</td>
+<td width="40%" align="center"><a href="http://doc.trolltech.com/trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt Solutions</div></td>
+</tr></table></div></address></body>
+</html>

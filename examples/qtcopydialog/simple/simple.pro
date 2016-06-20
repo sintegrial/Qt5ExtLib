@@ -2,7 +2,7 @@ TEMPLATE = app
 DEPENDPATH += .
 INCLUDEPATH += .
 
-TARGET = qtcopydialog
+TARGET = copydialog
 
 include(../../examples.pri)
 

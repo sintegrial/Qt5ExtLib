@@ -1,0 +1,40 @@
+<!DOCTYPE DCF>
+<DCF ref="index.html" icon="qtimagefilters.png" imagedir="../../gif" title="Qt Solutions: Image Filters Documentation">
+<section ref="classes.html" title="Classes">
+    <section ref="qtimagefilter.html" title="QtImageFilter Class Reference">
+        <keyword ref="qtimagefilter.html">QtImageFilter</keyword>
+        <keyword ref="qtimagefilter.html#FilterOption-enum">FilterOption</keyword>
+        <keyword ref="qtimagefilter.html#FilterOption-enum">QtImageFilter::Radius</keyword>
+        <keyword ref="qtimagefilter.html#FilterOption-enum">QtImageFilter::FilterChannels</keyword>
+        <keyword ref="qtimagefilter.html#FilterOption-enum">QtImageFilter::ConvolutionDivisor</keyword>
+        <keyword ref="qtimagefilter.html#FilterOption-enum">QtImageFilter::Center</keyword>
+        <keyword ref="qtimagefilter.html#FilterOption-enum">QtImageFilter::ConvolutionBias</keyword>
+        <keyword ref="qtimagefilter.html#FilterOption-enum">QtImageFilter::Force</keyword>
+        <keyword ref="qtimagefilter.html#FilterOption-enum">QtImageFilter::UserOption</keyword>
+        <keyword ref="qtimagefilter.html#FilterOption-enum">QtImageFilter::ConvolutionKernelMatrix</keyword>
+        <keyword ref="qtimagefilter.html#FilterOption-enum">QtImageFilter::FilterBorderPolicy</keyword>
+        <keyword ref="qtimagefilter.html#apply">apply</keyword>
+        <keyword ref="qtimagefilter.html#description">description</keyword>
+        <keyword ref="qtimagefilter.html#name">name</keyword>
+        <keyword ref="qtimagefilter.html#option">option</keyword>
+        <keyword ref="qtimagefilter.html#setOption">setOption</keyword>
+        <keyword ref="qtimagefilter.html#supportsOption">supportsOption</keyword>
+        <section ref="qtimagefilter-members.html" title="List of all members"/>
+    </section>
+    <section ref="qtimagefilterfactory.html" title="QtImageFilterFactory Class Reference">
+        <keyword ref="qtimagefilterfactory.html">QtImageFilterFactory</keyword>
+        <keyword ref="qtimagefilterfactory.html#ImageFilterFactoryFunction-typedef">ImageFilterFactoryFunction</keyword>
+        <keyword ref="qtimagefilterfactory.html#createImageFilter">createImageFilter</keyword>
+        <keyword ref="qtimagefilterfactory.html#imageFilterList">imageFilterList</keyword>
+        <keyword ref="qtimagefilterfactory.html#registerImageFilter">registerImageFilter</keyword>
+        <keyword ref="qtimagefilterfactory.html#qtRegisterImageFilter">qtRegisterImageFilter</keyword>
+        <section ref="qtimagefilterfactory-members.html" title="List of all members"/>
+    </section>
+</section>
+<section ref="overviews.html" title="Overviews">
+    <section ref="index.html" title="Image Filters">
+        <keyword ref="index.html">Image Filters</keyword>
+    </section>
+</section>
+<section ref="examples.html" title="Tutorial &amp; Examples"/>
+</DCF>

@@ -47,6 +47,8 @@ QT_BEGIN_NAMESPACE
 
 QtCursorDatabase::QtCursorDatabase()
 {
+    Q_INIT_RESOURCE(qtpropertybrowser);
+
     appendCursor(Qt::ArrowCursor, QCoreApplication::translate("QtCursorDatabase", "Arrow"),
                  QIcon(QLatin1String(":/qt-project.org/qtpropertybrowser/images/cursor-arrow.png")));
     appendCursor(Qt::UpArrowCursor, QCoreApplication::translate("QtCursorDatabase", "Up Arrow"),

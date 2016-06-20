@@ -96,7 +96,7 @@ public:
         m_rows = rows;
         m_cols = columns;
         m_data = (T*)std::realloc(m_data, m_rows * m_cols * sizeof(T));
-        std::memcpy(m_data, data, m_rows * m_cols * sizeof(T));
+		memcpy(m_data, data, m_rows * m_cols * sizeof(T));
     }
 
     void setData(int row, int column, const T &value)

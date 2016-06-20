@@ -3,7 +3,6 @@
 #include <qtgradientdialog.h>
 
 
-
 int main(int argc, char *argv[])
 {
     Q_INIT_RESOURCE(qtgradienteditor);

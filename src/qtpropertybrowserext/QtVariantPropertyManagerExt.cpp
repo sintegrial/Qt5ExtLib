@@ -107,7 +107,7 @@ int QtVariantPropertyManagerExt::attributeType(int propertyType, const QString &
 	}
 
 	if (propertyType == QVariant::Vector3D) {
-		if (attribute == QLatin1String("min") || attribute == QLatin1String("max"))
+        if (attribute == QLatin1String("minimum") || attribute == QLatin1String("maximum"))
 			return QVariant::Vector3D;
 
 		return QtVariantPropertyManager::attributeType(QVariant::Double, attribute);
@@ -131,9 +131,9 @@ QVariant QtVariantPropertyManagerExt::attributeValue(const QtProperty *property,
 	}
 
 	if (m_vector3dValues.contains(property)) {
-		if (attribute == QLatin1String("min"))
+        if (attribute == QLatin1String("minimum"))
 			return m_vector3dValues[property].vmin;
-		if (attribute == QLatin1String("max"))
+        if (attribute == QLatin1String("maximum"))
 			return m_vector3dValues[property].vmax;
 		
 		QtVariantPropertyManager::attributeValue(property->subProperties().first(), attribute);
@@ -264,8 +264,8 @@ void QtVariantPropertyManagerExt::setAttribute(QtProperty *property, const QStri
 		QList<QtProperty*> subp = property->subProperties();
 		Q_ASSERT(subp.size() == 3);
 
-		bool isMin = (attribute == QLatin1String("min"));
-		bool isMax = (attribute == QLatin1String("max"));
+        bool isMin = (attribute == QLatin1String("minimum"));
+        bool isMax = (attribute == QLatin1String("maximum"));
 		if (!isMin && !isMax){
 			QtVariantPropertyManager::setAttribute(subp[0], attribute, val);
 			QtVariantPropertyManager::setAttribute(subp[1], attribute, val);

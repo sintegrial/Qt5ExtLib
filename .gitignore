@@ -46,5 +46,4 @@ Network Trash Folder
 Temporary Items
 .apdisk
 *.user
-qt5extlib.pro.user.d0b51d1
-*.user
+*.user.*

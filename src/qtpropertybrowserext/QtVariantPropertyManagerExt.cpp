@@ -150,7 +150,12 @@ QString QtVariantPropertyManagerExt::valueText(const QtProperty *property) const
 
 	if (m_vector3dValues.contains(property)){
 		QVector3D v = m_vector3dValues[property].value;
-		return QString("[%1; %2; %3]").arg(v[0]).arg(v[1]).arg(v[2]);
+
+        bool ok;
+        int decimals = QtVariantPropertyManager::attributeValue(property->subProperties().first(), "decimals").toInt(&ok);
+        if (!ok) decimals = 2;
+
+        return QString("[%1; %2; %3]").arg(v[0],0,'f',decimals).arg(v[1],0,'f',decimals).arg(v[2],0,'f',decimals);
 	}
 		
 	return QtVariantPropertyManager::valueText(property);

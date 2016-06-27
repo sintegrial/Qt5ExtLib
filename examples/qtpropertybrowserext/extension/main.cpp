@@ -49,6 +49,7 @@ int main(int argc, char **argv)
     QtTreePropertyBrowser ed1;
     QtVariantPropertyManager *varMan = variantManager;
     ed1.setFactoryForManager(varMan, variantFactory);
+
     ed1.addProperty(topItem);
     ed1.addProperty(topItem2);
 

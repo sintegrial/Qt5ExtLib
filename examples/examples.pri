@@ -2,7 +2,7 @@
 QT += core gui widgets
 
 INCLUDEPATH += $$PWD/../src/qtwidgets
-INCLUDEPATH += $$PWD/../src/qtpropertybrowser
+INCLUDEPATH += $$PWD/../src/qtpropertybrowser $$PWD/../src/qtpropertybrowserext
 INCLUDEPATH += $$PWD/../src/qtgradienteditor
 INCLUDEPATH += $$PWD/../src/qtimagefilters
 

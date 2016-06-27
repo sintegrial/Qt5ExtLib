@@ -24,6 +24,10 @@ HEADERS += $$files($$PWD/qtpropertybrowser/*.h)
 FORMS += $$files($$PWD/qtpropertybrowser/*.ui)
 RESOURCES += $$files($$PWD/qtpropertybrowser/*.qrc)
 
+SOURCES += $$files($$PWD/qtpropertybrowserext/*.cpp)
+HEADERS += $$files($$PWD/qtpropertybrowserext/*.h)
+INCLUDEPATH += $$PWD/qtpropertybrowser $$PWD/qtpropertybrowserext
+
 # gradient editor
 SOURCES += $$files($$PWD/qtgradienteditor/*.cpp)
 HEADERS += $$files($$PWD/qtgradienteditor/*.h)

@@ -1,4 +1,6 @@
 #include <QApplication>
+#include <QTime>
+
 #include "QtVariantPropertyManagerExt.h"
 #include "QtVariantEditorFactoryExt.h"
 #include "qttreepropertybrowser.h"
@@ -44,6 +46,35 @@ int main(int argc, char **argv)
     itemV3d2->setValue(QVector3D(0.1f, -0.1f, 0.0f));
     topItem2->addSubProperty(itemV3d2);
 
+    QtProperty *topItem3 = variantManager->addProperty(QtVariantPropertyManager::groupTypeId(),
+                QLatin1String("Extended Properties"));
+
+    QtVariantProperty *itemBool = variantManager->addProperty(QVariant::Bool, QLatin1String("Checkbox only"));
+    itemBool->setAttribute("textVisible", false);
+    topItem3->addSubProperty(itemBool);
+
+    QtVariantProperty *itemInt = variantManager->addProperty(QVariant::Int, QLatin1String("Integer with suffix"));
+    itemInt->setAttribute("suffix", "%");
+    itemInt->setValue(50);
+    topItem3->addSubProperty(itemInt);
+
+    QtVariantProperty *itemFloat = variantManager->addProperty(QVariant::Double, QLatin1String("Real with suffix"));
+    itemFloat->setAttribute("suffix", "USD");
+    itemFloat->setValue(1230.99);
+    topItem3->addSubProperty(itemFloat);
+
+    QtVariantProperty *itemFloat1 = variantManager->addProperty(QVariant::Double, QLatin1String("Real with prefix"));
+    itemFloat1->setAttribute("prefix", "$");
+    itemFloat1->setValue(1230.99);
+    topItem3->addSubProperty(itemFloat1);
+
+    QtVariantProperty *itemTime = variantManager->addProperty(QVariant::Time, QLatin1String("Time with prefix & suffix"));
+    itemTime->setAttribute("prefix", "After");
+    itemTime->setAttribute("suffix", "o'clock");
+    itemTime->setValue(QTime::currentTime());
+    topItem3->addSubProperty(itemTime);
+
+
     QtVariantEditorFactoryExt *variantFactory = new QtVariantEditorFactoryExt();
 
     QtTreePropertyBrowser ed1;
@@ -52,6 +83,7 @@ int main(int argc, char **argv)
 
     ed1.addProperty(topItem);
     ed1.addProperty(topItem2);
+    ed1.addProperty(topItem3);
 
     ed1.resize(800,600);
     ed1.show();

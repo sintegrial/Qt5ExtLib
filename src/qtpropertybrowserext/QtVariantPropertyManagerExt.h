@@ -61,6 +61,9 @@ protected:
 	};
 	
 	QMap<const QtProperty*, Vector3dData> m_vector3dValues;
+
+    // Extended attributes
+    QMap<const QtProperty*, QString> m_suffixes, m_prefixes;
 };
 
 

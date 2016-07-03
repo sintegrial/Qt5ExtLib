@@ -19,8 +19,10 @@ QtVariantProperty* QtVariantPropertyManagerExt::addProperty(int propertyType, co
 	m_duringChanges = true;
 	
     QtVariantProperty* vp = QtVariantPropertyManager::addProperty(propertyType, name);
-	if (vp){
-		if (propertyType == QVariant::Vector3D){
+    if (vp)
+    {
+        if (propertyType == QVariant::Vector3D)
+        {
             QtVariantProperty* px = QtVariantPropertyManager::addProperty(QVariant::Double, "X");
 			vp->addSubProperty(px);
 			m_propertySubMap[px] = vp;
@@ -79,23 +81,30 @@ QVariant QtVariantPropertyManagerExt::value(const QtProperty *property) const
 
 QStringList QtVariantPropertyManagerExt::attributes(int propertyType) const
 {
-	if (propertyType == QVariant::Url) {
+    if (propertyType == QVariant::Url)
+    {
 		QStringList attr;
 		attr << QLatin1String("filter") << QLatin1String("type") << QLatin1String("defaultPath");
 		return attr;
 	}
 	
-	if (propertyType == QVariant::Vector3D) {
+    if (propertyType == QVariant::Vector3D)
+    {
 		return QtVariantPropertyManager::attributes(QVariant::Double);
 	}
 
-	return QtVariantPropertyManager::attributes(propertyType);
+    QStringList result = QtVariantPropertyManager::attributes(propertyType);
+
+    result << "suffix" << "prefix";
+
+    return result;
 }
 
 
 int QtVariantPropertyManagerExt::attributeType(int propertyType, const QString &attribute) const
 {
-	if (propertyType == QVariant::Url) {
+    if (propertyType == QVariant::Url)
+    {
 		if (attribute == QLatin1String("filter"))
 			return QVariant::String;
 		if (attribute == QLatin1String("defaultPath"))
@@ -106,12 +115,18 @@ int QtVariantPropertyManagerExt::attributeType(int propertyType, const QString &
 		return 0;
 	}
 
-	if (propertyType == QVariant::Vector3D) {
+    if (propertyType == QVariant::Vector3D)
+    {
         if (attribute == QLatin1String("minimum") || attribute == QLatin1String("maximum"))
 			return QVariant::Vector3D;
 
 		return QtVariantPropertyManager::attributeType(QVariant::Double, attribute);
 	}
+
+    if (attribute == "suffix" || attribute == "prefix")
+    {
+        return QVariant::String;
+    }
 	
 	return QtVariantPropertyManager::attributeType(propertyType, attribute);
 }
@@ -119,7 +134,8 @@ int QtVariantPropertyManagerExt::attributeType(int propertyType, const QString &
 
 QVariant QtVariantPropertyManagerExt::attributeValue(const QtProperty *property, const QString &attribute) const
 {
-	if (m_filePathValues.contains(property)) {
+    if (m_filePathValues.contains(property))
+    {
 		if (attribute == QLatin1String("type"))
 			return m_filePathValues[property].type;			
 		if (attribute == QLatin1String("filter"))
@@ -130,7 +146,8 @@ QVariant QtVariantPropertyManagerExt::attributeValue(const QtProperty *property,
 		return QVariant();
 	}
 
-	if (m_vector3dValues.contains(property)) {
+    if (m_vector3dValues.contains(property))
+    {
         if (attribute == QLatin1String("minimum"))
 			return m_vector3dValues[property].vmin;
         if (attribute == QLatin1String("maximum"))
@@ -138,7 +155,23 @@ QVariant QtVariantPropertyManagerExt::attributeValue(const QtProperty *property,
 		
 		QtVariantPropertyManager::attributeValue(property->subProperties().first(), attribute);
 	}
-	
+
+    if (attribute == "suffix")
+    {
+        if (m_suffixes.contains(property))
+            return m_suffixes[property];
+
+        return QVariant();
+    }
+
+    if (attribute == "prefix")
+    {
+        if (m_prefixes.contains(property))
+            return m_prefixes[property];
+
+        return QVariant();
+    }
+
 	return QtVariantPropertyManager::attributeValue(property, attribute);
 }
 
@@ -148,23 +181,38 @@ QString QtVariantPropertyManagerExt::valueText(const QtProperty *property) const
 	if (m_filePathValues.contains(property))
 		return m_filePathValues[property].value;
 
-	if (m_vector3dValues.contains(property)){
+    if (m_vector3dValues.contains(property))
+    {
 		QVector3D v = m_vector3dValues[property].value;
 
-        bool ok;
+        bool ok = false;
         int decimals = QtVariantPropertyManager::attributeValue(property->subProperties().first(), "decimals").toInt(&ok);
-        if (!ok) decimals = 2;
+        if (!ok)
+            decimals = 2;
 
         return QString("[%1; %2; %3]").arg(v[0],0,'f',decimals).arg(v[1],0,'f',decimals).arg(v[2],0,'f',decimals);
 	}
+
+    QString result = QtVariantPropertyManager::valueText(property);
+
+    if (m_suffixes.contains(property))
+    {
+        result += " " + m_suffixes[property];
+    }
+
+    if (m_prefixes.contains(property))
+    {
+        result.prepend(m_prefixes[property] + " ");
+    }
 		
-	return QtVariantPropertyManager::valueText(property);
+    return result;
 }
 
 
 void QtVariantPropertyManagerExt::setValue(QtProperty *property, const QVariant &val)
 {
-	if (m_filePathValues.contains(property)) {
+    if (m_filePathValues.contains(property))
+    {
 		if (val.type() != QVariant::String && !val.canConvert(QVariant::String))
 			return;
 			
@@ -180,7 +228,8 @@ void QtVariantPropertyManagerExt::setValue(QtProperty *property, const QVariant 
 		return;
 	}
 	
-	if (m_vector3dValues.contains(property)){
+    if (m_vector3dValues.contains(property))
+    {
 		if (val.type() != QVariant::Vector3D && !val.canConvert(QVariant::Vector3D))
 			return;
 
@@ -212,7 +261,8 @@ void QtVariantPropertyManagerExt::setValue(QtProperty *property, const QVariant 
 
 void QtVariantPropertyManagerExt::setAttribute(QtProperty *property, const QString &attribute, const QVariant &val)
 {
-	if (m_filePathValues.contains(property)) {
+    if (m_filePathValues.contains(property))
+    {
 		if (attribute == QLatin1String("filter")) {
 			if (val.type() != QVariant::String && !val.canConvert(QVariant::String))
 				return;
@@ -265,7 +315,8 @@ void QtVariantPropertyManagerExt::setAttribute(QtProperty *property, const QStri
 		return;
 	}
 	
-	if (m_vector3dValues.contains(property)){
+    if (m_vector3dValues.contains(property))
+    {
 		QList<QtProperty*> subp = property->subProperties();
 		Q_ASSERT(subp.size() == 3);
 
@@ -300,6 +351,18 @@ void QtVariantPropertyManagerExt::setAttribute(QtProperty *property, const QStri
 		return;
 	}
 	
+    if (attribute == "suffix")
+    {
+        m_suffixes[property] = val.toString();
+        return;
+    }
+
+    if (attribute == "prefix")
+    {
+        m_prefixes[property] = val.toString();
+        return;
+    }
+
 	QtVariantPropertyManager::setAttribute(property, attribute, val);
 }
 
@@ -349,6 +412,8 @@ void QtVariantPropertyManagerExt::uninitializeProperty(QtProperty *property)
 	m_filePathValues.remove(property);
 	m_vector3dValues.remove(property);
 	m_propertySubMap.remove(property);
-	
+    m_suffixes.remove(property);
+    m_prefixes.remove(property);
+
 	QtVariantPropertyManager::uninitializeProperty(property);
 }

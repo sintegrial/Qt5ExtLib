@@ -1,5 +1,8 @@
 #include "QtVariantPropertyManagerExt.h"
 
+#include <cfloat>
+#include <limits>
+
 
 // QtVariantPropertyManagerExt
 
@@ -26,15 +29,21 @@ QtVariantProperty* QtVariantPropertyManagerExt::addProperty(int propertyType, co
             QtVariantProperty* px = QtVariantPropertyManager::addProperty(QVariant::Double, "X");
 			vp->addSubProperty(px);
 			m_propertySubMap[px] = vp;
+            px->setAttribute("minimum", -FLT_MAX);
+            px->setAttribute("maximum", FLT_MAX);
 			
             QtVariantProperty* py = QtVariantPropertyManager::addProperty(QVariant::Double, "Y");
 			vp->addSubProperty(py);
 			m_propertySubMap[py] = vp;
-			
+            py->setAttribute("minimum", -FLT_MAX);
+            py->setAttribute("maximum", FLT_MAX);
+
             QtVariantProperty* pz = QtVariantPropertyManager::addProperty(QVariant::Double, "Z");
 			vp->addSubProperty(pz);		
 			m_propertySubMap[pz] = vp;
-		}
+            pz->setAttribute("minimum", -FLT_MAX);
+            pz->setAttribute("maximum", FLT_MAX);
+        }
 	}
 	
 	m_duringChanges = false;

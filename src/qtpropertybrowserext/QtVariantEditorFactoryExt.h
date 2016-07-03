@@ -26,9 +26,13 @@ private Q_SLOTS:
 	void slotPropertyChanged(QtProperty *property, const QVariant &value);
 	void slotPropertyAttributeChanged(QtProperty *property, const QString &attribute, const QVariant &value);
 	void slotSetValue(const QString &value);
-	void slotEditorDestroyed(QObject *object);
+    void slotSetValue(int);
+    void slotSetValue(double);
+    void slotEditorDestroyed(QObject *object);
 			
 private:
+    void doSetValue(const QVariant& value);
+
     QMap<QtProperty*, QList<QWidget*> > m_createdEditors;
     QMap<QWidget*, QtProperty*> m_editorToProperty;
 };

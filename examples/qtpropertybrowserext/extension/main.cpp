@@ -36,6 +36,8 @@ int main(int argc, char **argv)
 
     QtVariantProperty *itemV3d = variantManager->addProperty(QVariant::Vector3D, QLatin1String("Default QVector3D"));
     itemV3d->setValue(QVector3D(10,20,30));
+    // itemV3d->setAttribute("minimum", QVector3D(-10,-10,-10));
+    //itemV3d->setAttribute("maximum", QVector3D(40,40,40));
     topItem2->addSubProperty(itemV3d);
 
     QtVariantProperty *itemV3d2 = variantManager->addProperty(QVariant::Vector3D, QLatin1String("Limited QVector3D (-1...1)"));
@@ -56,6 +58,8 @@ int main(int argc, char **argv)
     QtVariantProperty *itemInt = variantManager->addProperty(QVariant::Int, QLatin1String("Integer with suffix"));
     itemInt->setAttribute("suffix", "%");
     itemInt->setValue(50);
+    itemInt->setAttribute("minimum", "0");
+    itemInt->setAttribute("maximum", "250");
     topItem3->addSubProperty(itemInt);
 
     QtVariantProperty *itemFloat = variantManager->addProperty(QVariant::Double, QLatin1String("Real with suffix"));

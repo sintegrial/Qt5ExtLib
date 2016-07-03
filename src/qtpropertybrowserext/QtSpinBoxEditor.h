@@ -7,6 +7,7 @@
 #include <QHBoxLayout>
 #include <QSpinBox>
 #include <QDebug>
+#include <QFocusEvent>
 
 
 template<typename UnitType, class EditorType>
@@ -45,6 +46,7 @@ protected /*Q_SLOTS*/:
     void slotMaxButtonClicked();
 
 protected:
+    virtual void focusInEvent(QFocusEvent *e);
     virtual void UpdateConstrains() {}
 
     EditorType *m_editor;
@@ -64,8 +66,11 @@ TSpinBoxEditor<UnitType, EditorType>::TSpinBoxEditor(QWidget *parent) : QWidget(
 
     m_editor = new EditorType(this);
     mainLayout->addWidget(m_editor);
+    setFocusProxy(m_editor);
+    setFocusPolicy(Qt::StrongFocus);
 
     m_unitLabel = new QLabel(this);
+    m_unitLabel->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Preferred);
     m_unitLabel->hide();
     mainLayout->addWidget(m_unitLabel);
 
@@ -165,6 +170,18 @@ void TSpinBoxEditor<UnitType, EditorType>::setUnitText(const QString &val)
     m_unitLabel->setVisible(!val.isEmpty());
 }
 
+
+template<typename UnitType, class EditorType>
+void TSpinBoxEditor<UnitType, EditorType>::focusInEvent(QFocusEvent *e)
+{
+    //m_editor->lineEdit()->event(e);
+
+    if (e->reason() == Qt::TabFocusReason || e->reason() == Qt::BacktabFocusReason) {
+        m_editor->selectAll();
+    }
+
+    QWidget::focusInEvent(e);
+}
 
 
 // protected slots

@@ -13,6 +13,7 @@ QtIntSpinBoxEditor::QtIntSpinBoxEditor(QWidget *parent) : Super(parent)
     connect(m_slider, SIGNAL(valueChanged(int)), this, SLOT(OnSliderMoved(int)));
     connect(m_minButton, SIGNAL(clicked()), this, SLOT(OnMinButtonClicked()));
     connect(m_maxButton, SIGNAL(clicked()), this, SLOT(OnMaxButtonClicked()));
+    connect(m_defaultButton, SIGNAL(clicked()), this, SLOT(OnDefaultButtonClicked()));
 }
 
 
@@ -73,6 +74,11 @@ void QtIntSpinBoxEditor::OnMaxButtonClicked()
     slotMaxButtonClicked();
 }
 
+void QtIntSpinBoxEditor::OnDefaultButtonClicked()
+{
+    slotDefaultButtonClicked();
+}
+
 
 // QtRealSpinBoxEditor
 
@@ -83,6 +89,7 @@ QtRealSpinBoxEditor::QtRealSpinBoxEditor(QWidget *parent) : Super(parent)
     connect(m_slider, SIGNAL(valueChanged(int)), this, SLOT(OnSliderMoved(int)));
     connect(m_minButton, SIGNAL(clicked()), this, SLOT(OnMinButtonClicked()));
     connect(m_maxButton, SIGNAL(clicked()), this, SLOT(OnMaxButtonClicked()));
+    connect(m_defaultButton, SIGNAL(clicked()), this, SLOT(OnDefaultButtonClicked()));
 
     setSliderMultiplier(pow(10, m_editor->decimals()));
 
@@ -157,4 +164,9 @@ void QtRealSpinBoxEditor::OnMinButtonClicked()
 void QtRealSpinBoxEditor::OnMaxButtonClicked()
 {
     slotMaxButtonClicked();
+}
+
+void QtRealSpinBoxEditor::OnDefaultButtonClicked()
+{
+    slotDefaultButtonClicked();
 }

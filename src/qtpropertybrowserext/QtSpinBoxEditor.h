@@ -39,11 +39,15 @@ public:
     QString unitText() const                { return m_unitLabel->text(); }
     void setUnitText(const QString& val);
 
+    void setDefaultValue(UnitType def);
+    void disableDefaultValue();
+
 protected /*Q_SLOTS*/:
     void slotEditorValueChanged(UnitType val);
     void slotSliderMoved(int val);
     void slotMinButtonClicked();
     void slotMaxButtonClicked();
+    void slotDefaultButtonClicked();
 
 protected:
     virtual void focusInEvent(QFocusEvent *e);
@@ -55,6 +59,9 @@ protected:
     QLabel *m_unitLabel;
 
     int m_sliderMultiplier;
+
+    UnitType m_defaultValue;
+    QToolButton *m_defaultButton;
 };
 
 
@@ -73,6 +80,10 @@ TSpinBoxEditor<UnitType, EditorType>::TSpinBoxEditor(QWidget *parent) : QWidget(
     m_unitLabel->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Preferred);
     m_unitLabel->hide();
     mainLayout->addWidget(m_unitLabel);
+
+    m_defaultButton = new QToolButton(this);
+    mainLayout->addWidget(m_defaultButton);
+    setDefaultValue(0);
 
     m_minButton = new QToolButton(this);
     mainLayout->addWidget(m_minButton);
@@ -172,6 +183,24 @@ void TSpinBoxEditor<UnitType, EditorType>::setUnitText(const QString &val)
 
 
 template<typename UnitType, class EditorType>
+void TSpinBoxEditor<UnitType, EditorType>::setDefaultValue(UnitType def)
+{
+    m_defaultValue = def;
+    m_defaultButton->setVisible(true);
+    m_defaultButton->setText(QString::number(def));
+}
+
+
+template<typename UnitType, class EditorType>
+void TSpinBoxEditor<UnitType, EditorType>::disableDefaultValue()
+{
+    m_defaultButton->setVisible(false);
+}
+
+
+// reimp
+
+template<typename UnitType, class EditorType>
 void TSpinBoxEditor<UnitType, EditorType>::focusInEvent(QFocusEvent *e)
 {
     //m_editor->lineEdit()->event(e);
@@ -224,6 +253,13 @@ void TSpinBoxEditor<UnitType, EditorType>::slotMaxButtonClicked()
 }
 
 
+template<typename UnitType, class EditorType>
+void TSpinBoxEditor<UnitType, EditorType>::slotDefaultButtonClicked()
+{
+    m_editor->setValue(m_defaultValue);
+}
+
+
 // integer editor (based on QSpinBox)
 
 class QtIntSpinBoxEditor : public TSpinBoxEditor<int, QSpinBox>
@@ -246,6 +282,7 @@ protected Q_SLOTS:
     void OnSliderMoved(int val);
     void OnMinButtonClicked();
     void OnMaxButtonClicked();
+    void OnDefaultButtonClicked();
 };
 
 
@@ -273,6 +310,7 @@ protected Q_SLOTS:
     void OnSliderMoved(int val);
     void OnMinButtonClicked();
     void OnMaxButtonClicked();
+    void OnDefaultButtonClicked();
 };
 
 

@@ -64,6 +64,9 @@ protected:
 
     // Extended attributes
     QMap<const QtProperty*, QString> m_suffixes, m_prefixes;
+
+    QMap<const QtProperty*, TIntStringList> m_intPresets;
+    QMap<const QtProperty*, TDoubleStringList> m_doublePresets;
 };
 
 

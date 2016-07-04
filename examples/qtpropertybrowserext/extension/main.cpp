@@ -1,5 +1,7 @@
 #include <QApplication>
 #include <QTime>
+#include <QMap>
+#include <QPair>
 
 #include "QtVariantPropertyManagerExt.h"
 #include "QtVariantEditorFactoryExt.h"
@@ -8,6 +10,7 @@
 int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
+    app.setStyle("fusion");
 
     QtVariantPropertyManagerExt *variantManager = new QtVariantPropertyManagerExt();
 
@@ -60,6 +63,9 @@ int main(int argc, char **argv)
     itemInt->setValue(50);
     itemInt->setAttribute("minimum", "0");
     itemInt->setAttribute("maximum", "250");
+    TIntStringList intPresets;
+    intPresets << TIntStringPair(10, "10%") << TIntStringPair(20, "20%") << TIntStringPair(30, "30%");
+    itemInt->setAttribute("preset", QVariant::fromValue(intPresets));
     topItem3->addSubProperty(itemInt);
 
     QtVariantProperty *itemFloat = variantManager->addProperty(QVariant::Double, QLatin1String("Real with suffix"));
@@ -69,7 +75,11 @@ int main(int argc, char **argv)
 
     QtVariantProperty *itemFloat1 = variantManager->addProperty(QVariant::Double, QLatin1String("Real with prefix"));
     itemFloat1->setAttribute("prefix", "$");
-    itemFloat1->setValue(1230.99);
+    itemFloat1->setValue(1230.99); 
+    TDoubleStringList doublePresets;
+    doublePresets << TDoubleStringPair(100, "$100") << TDoubleStringPair(200, "$200") << TDoubleStringPair(1000, "$1000")
+                      << TDoubleStringPair(2000, "$2000") << TDoubleStringPair(100000, "$100000");
+    itemFloat1->setAttribute("preset", QVariant::fromValue(doublePresets));
     topItem3->addSubProperty(itemFloat1);
 
     QtVariantProperty *itemTime = variantManager->addProperty(QVariant::Time, QLatin1String("Time with prefix & suffix"));

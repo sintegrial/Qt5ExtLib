@@ -14,6 +14,7 @@ QtIntSpinBoxEditor::QtIntSpinBoxEditor(QWidget *parent) : Super(parent)
     connect(m_minButton, SIGNAL(clicked()), this, SLOT(OnMinButtonClicked()));
     connect(m_maxButton, SIGNAL(clicked()), this, SLOT(OnMaxButtonClicked()));
     connect(m_defaultButton, SIGNAL(clicked()), this, SLOT(OnDefaultButtonClicked()));
+    connect(&m_presetMenu, SIGNAL(triggered(QAction*)), this, SLOT(OnPresetTriggered(QAction*)));
 }
 
 
@@ -51,8 +52,10 @@ void QtIntSpinBoxEditor::UpdateConstrains()
     m_slider->setRange(vmin, vmax);
 
     m_slider->blockSignals(false);
-}
 
+
+    enableSlider(m_sliderOn);
+}
 
 void QtIntSpinBoxEditor::OnEditorValueChanged(int val)
 {
@@ -79,6 +82,11 @@ void QtIntSpinBoxEditor::OnDefaultButtonClicked()
     slotDefaultButtonClicked();
 }
 
+void QtIntSpinBoxEditor::OnPresetTriggered(QAction *action)
+{
+    slotPresetTriggered(action);
+}
+
 
 // QtRealSpinBoxEditor
 
@@ -90,6 +98,7 @@ QtRealSpinBoxEditor::QtRealSpinBoxEditor(QWidget *parent) : Super(parent)
     connect(m_minButton, SIGNAL(clicked()), this, SLOT(OnMinButtonClicked()));
     connect(m_maxButton, SIGNAL(clicked()), this, SLOT(OnMaxButtonClicked()));
     connect(m_defaultButton, SIGNAL(clicked()), this, SLOT(OnDefaultButtonClicked()));
+    connect(&m_presetMenu, SIGNAL(triggered(QAction*)), this, SLOT(OnPresetTriggered(QAction*)));
 
     setSliderMultiplier(pow(10, m_editor->decimals()));
 
@@ -143,8 +152,10 @@ void QtRealSpinBoxEditor::UpdateConstrains()
     }
 
     m_slider->blockSignals(false);
-}
 
+
+    enableSlider(m_sliderOn);
+}
 
 void QtRealSpinBoxEditor::OnEditorValueChanged(double val)
 {
@@ -169,4 +180,9 @@ void QtRealSpinBoxEditor::OnMaxButtonClicked()
 void QtRealSpinBoxEditor::OnDefaultButtonClicked()
 {
     slotDefaultButtonClicked();
+}
+
+void QtRealSpinBoxEditor::OnPresetTriggered(QAction *action)
+{
+    slotPresetTriggered(action);
 }

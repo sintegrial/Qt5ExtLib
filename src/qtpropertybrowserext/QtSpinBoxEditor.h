@@ -8,6 +8,7 @@
 #include <QSpinBox>
 #include <QDebug>
 #include <QFocusEvent>
+#include <QMenu>
 
 
 template<typename UnitType, class EditorType>
@@ -31,6 +32,8 @@ public:
     bool ticksEnabled() const                  { return m_slider->tickPosition() != QSlider::NoTicks; }
     void enableTicks(bool on = true);
 
+    void enableSlider(bool on = true);
+
     void expandVertically(bool on = true);
 
     void setEditorWidth(int width);
@@ -42,12 +45,17 @@ public:
     void setDefaultValue(UnitType def);
     void disableDefaultValue();
 
+    typedef QList<QPair<UnitType, QString> > PresetList;
+    void setPredefinedValues(const PresetList& preset);
+    void disablePredefinedValues();
+
 protected /*Q_SLOTS*/:
     void slotEditorValueChanged(UnitType val);
     void slotSliderMoved(int val);
     void slotMinButtonClicked();
     void slotMaxButtonClicked();
     void slotDefaultButtonClicked();
+    void slotPresetTriggered(QAction*);
 
 protected:
     virtual void focusInEvent(QFocusEvent *e);
@@ -59,9 +67,14 @@ protected:
     QLabel *m_unitLabel;
 
     int m_sliderMultiplier;
+    bool m_sliderOn;
 
     UnitType m_defaultValue;
     QToolButton *m_defaultButton;
+
+    PresetList m_presetList;
+    QToolButton *m_presetButton;
+    QMenu m_presetMenu;
 };
 
 
@@ -82,6 +95,7 @@ TSpinBoxEditor<UnitType, EditorType>::TSpinBoxEditor(QWidget *parent) : QWidget(
     mainLayout->addWidget(m_unitLabel);
 
     m_defaultButton = new QToolButton(this);
+    m_defaultButton->setText("<>");
     mainLayout->addWidget(m_defaultButton);
     setDefaultValue(0);
 
@@ -94,6 +108,16 @@ TSpinBoxEditor<UnitType, EditorType>::TSpinBoxEditor(QWidget *parent) : QWidget(
 
     m_maxButton = new QToolButton(this);
     mainLayout->addWidget(m_maxButton);
+
+    m_presetButton = new QToolButton(this);
+    m_presetButton->setText("... ");
+    m_presetButton->setToolTip(tr("Pick from preset"));
+    m_presetButton->setPopupMode(QToolButton::InstantPopup);
+    mainLayout->addWidget(m_presetButton);
+    m_presetButton->hide();
+
+
+    enableSlider(false);
 
     m_sliderMultiplier = 1;
 
@@ -144,6 +168,16 @@ void TSpinBoxEditor<UnitType, EditorType>::enableTicks(bool on)
 
 
 template<typename UnitType, class EditorType>
+void TSpinBoxEditor<UnitType, EditorType>::enableSlider(bool on)
+{
+    m_sliderOn = on;
+    m_minButton->setVisible(on);
+    m_maxButton->setVisible(on);
+    m_slider->setVisible(on);
+}
+
+
+template<typename UnitType, class EditorType>
 void TSpinBoxEditor<UnitType, EditorType>::expandVertically(bool on)
 {
     if (on){
@@ -187,7 +221,7 @@ void TSpinBoxEditor<UnitType, EditorType>::setDefaultValue(UnitType def)
 {
     m_defaultValue = def;
     m_defaultButton->setVisible(true);
-    m_defaultButton->setText(QString::number(def));
+    m_defaultButton->setToolTip(tr("Reset to %1").arg(def));
 }
 
 
@@ -195,6 +229,39 @@ template<typename UnitType, class EditorType>
 void TSpinBoxEditor<UnitType, EditorType>::disableDefaultValue()
 {
     m_defaultButton->setVisible(false);
+}
+
+
+template<typename UnitType, class EditorType>
+void TSpinBoxEditor<UnitType, EditorType>::setPredefinedValues(const PresetList& preset)
+{
+    if (!preset.count())
+    {
+        m_presetButton->setVisible(false);
+        return;
+    }
+
+    m_presetMenu.clear();
+    for (int i = 0; i < preset.count(); ++i)
+    {
+        const QPair<UnitType, QString>& pair = preset.at(i);
+        UnitType value = pair.first;
+        QString text = pair.second;
+        if (text.isEmpty())
+            text = QString::number(value);
+        QAction *action = m_presetMenu.addAction(text);
+        action->setData(value);
+    }
+
+    m_presetButton->setMenu(&m_presetMenu);
+    m_presetButton->setVisible(true);
+}
+
+
+template<typename UnitType, class EditorType>
+void TSpinBoxEditor<UnitType, EditorType>::disablePredefinedValues()
+{
+    m_presetButton->setVisible(false);
 }
 
 
@@ -260,6 +327,13 @@ void TSpinBoxEditor<UnitType, EditorType>::slotDefaultButtonClicked()
 }
 
 
+template<typename UnitType, class EditorType>
+void TSpinBoxEditor<UnitType, EditorType>::slotPresetTriggered(QAction* action)
+{
+    m_editor->setValue(action->data().value<UnitType>());
+}
+
+
 // integer editor (based on QSpinBox)
 
 class QtIntSpinBoxEditor : public TSpinBoxEditor<int, QSpinBox>
@@ -283,6 +357,7 @@ protected Q_SLOTS:
     void OnMinButtonClicked();
     void OnMaxButtonClicked();
     void OnDefaultButtonClicked();
+    void OnPresetTriggered(QAction* action);
 };
 
 
@@ -311,6 +386,7 @@ protected Q_SLOTS:
     void OnMinButtonClicked();
     void OnMaxButtonClicked();
     void OnDefaultButtonClicked();
+    void OnPresetTriggered(QAction* action);
 };
 
 

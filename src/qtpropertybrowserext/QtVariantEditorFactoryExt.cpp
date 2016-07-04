@@ -56,7 +56,7 @@ QWidget *QtVariantEditorFactoryExt::createEditor(QtVariantPropertyManager *manag
 	}
 
 
-    // test
+    // custom editors
     if (propertyType == QVariant::Int)
     {
         QtIntSpinBoxEditor *editor = new QtIntSpinBoxEditor(parent);
@@ -64,7 +64,7 @@ QWidget *QtVariantEditorFactoryExt::createEditor(QtVariantPropertyManager *manag
         editor->setMaximum(manager->attributeValue(property, QLatin1String("maximum")).toInt());
         editor->setSingleStep(manager->attributeValue(property, QLatin1String("singleStep")).toInt());
         editor->setUnitText(manager->attributeValue(property, QLatin1String("suffix")).toString());
-
+        editor->setPredefinedValues(manager->attributeValue(property, QLatin1String("preset")).value<TIntStringList>());
         editor->setValue(manager->value(property).toInt());
 
         m_createdEditors[property].append(editor);
@@ -85,6 +85,7 @@ QWidget *QtVariantEditorFactoryExt::createEditor(QtVariantPropertyManager *manag
         editor->setSingleStep(manager->attributeValue(property, QLatin1String("singleStep")).toDouble());
         editor->setDecimals(manager->attributeValue(property, QLatin1String("decimals")).toInt());
         editor->setUnitText(manager->attributeValue(property, QLatin1String("suffix")).toString());
+        editor->setPredefinedValues(manager->attributeValue(property, QLatin1String("preset")).value<TDoubleStringList>());
 
         editor->setValue(manager->value(property).toDouble());
 

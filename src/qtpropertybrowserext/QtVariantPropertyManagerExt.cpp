@@ -1,4 +1,5 @@
 #include "QtVariantPropertyManagerExt.h"
+#include "QtPropertyDefines.h"
 
 #include <cfloat>
 #include <limits>
@@ -106,6 +107,11 @@ QStringList QtVariantPropertyManagerExt::attributes(int propertyType) const
 
     result << "suffix" << "prefix";
 
+    if (propertyType == QVariant::Int || propertyType == QVariant::Double)
+    {
+        result << "preset";
+    }
+
     return result;
 }
 
@@ -135,6 +141,15 @@ int QtVariantPropertyManagerExt::attributeType(int propertyType, const QString &
     if (attribute == "suffix" || attribute == "prefix")
     {
         return QVariant::String;
+    }
+
+    if (attribute == "preset")
+    {
+//        if (propertyType == QVariant::Int)
+//            return TIntStringList;
+
+//        if (propertyType == QVariant::Double)
+//            return TDoubleStringList;
     }
 	
 	return QtVariantPropertyManager::attributeType(propertyType, attribute);
@@ -177,6 +192,17 @@ QVariant QtVariantPropertyManagerExt::attributeValue(const QtProperty *property,
     {
         if (m_prefixes.contains(property))
             return m_prefixes[property];
+
+        return QVariant();
+    }
+
+    if (attribute == "preset")
+    {
+        if (m_intPresets.contains(property))
+            return QVariant::fromValue(m_intPresets[property]);
+
+        if (m_doublePresets.contains(property))
+            return QVariant::fromValue(m_doublePresets[property]);
 
         return QVariant();
     }
@@ -372,6 +398,25 @@ void QtVariantPropertyManagerExt::setAttribute(QtProperty *property, const QStri
         return;
     }
 
+    if (attribute == "preset")
+    {
+        int type = propertyType(property);
+
+        if (type == QVariant::Int)
+        {
+            m_intPresets[property] = val.value<TIntStringList>();
+            return;
+        }
+
+        if (type == QVariant::Double)
+        {
+            m_doublePresets[property] = val.value<TDoubleStringList>();
+            return;
+        }
+
+        return;
+    }
+
 	QtVariantPropertyManager::setAttribute(property, attribute, val);
 }
 
@@ -423,6 +468,8 @@ void QtVariantPropertyManagerExt::uninitializeProperty(QtProperty *property)
 	m_propertySubMap.remove(property);
     m_suffixes.remove(property);
     m_prefixes.remove(property);
+    m_intPresets.remove(property);
+    m_doublePresets.remove(property);
 
 	QtVariantPropertyManager::uninitializeProperty(property);
 }

@@ -8,7 +8,8 @@ For more information, please see annotations inside the source files.
 
 #### Contents
 
-- Qt Property Browser Framework (2.6)
+- Qt Property Browser Framework (2.6):
+  - QVariant-based property manager extensions (new value types File/Directory, QVector3D; extended attributes like suffix/prefix; extended numeric editors etc.)
 - Qt Solutions Widgets:
   - Color Combo Box (2.4.1)
   - Color Picker (2.6.1)

@@ -6,6 +6,7 @@ INCLUDEPATH += $$PWD/../src/qtpropertybrowser $$PWD/../src/qtpropertybrowserext
 INCLUDEPATH += $$PWD/../src/qtgradienteditor
 INCLUDEPATH += $$PWD/../src/qtimagefilters
 INCLUDEPATH += $$PWD/../src/findwidget
+INCLUDEPATH += $$PWD/../src/qtsingleapplication
 
 DESTDIR = $$OUT_PWD/../../../examples
 

@@ -35,9 +35,11 @@
 #include "qtgradientmanager.h"
 #include "qtgradientdialog.h"
 #include "qtgradientutils.h"
-#include <QtGui/QPainter>
-#include <QtWidgets/QMessageBox>
-#include <QtGui/QClipboard>
+
+#include <QPainter>
+#include <QMessageBox>
+#include <QClipboard>
+#include <QAction>
 
 QT_BEGIN_NAMESPACE
 

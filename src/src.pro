@@ -2,12 +2,12 @@ TEMPLATE = lib
 
 CONFIG += static
 #CONFIG += c++11
-QT += core gui widgets
+QT += core gui widgets network
 
 CONFIG(debug, debug|release){
-	TARGET = Qt5ExtLibd
+    TARGET = Qt5ExtLibd
 } else {
-	TARGET = Qt5ExtLib
+    TARGET = Qt5ExtLib
 }
 
 DESTDIR = $$OUT_PWD/../lib
@@ -48,3 +48,10 @@ RESOURCES += $$files($$PWD/findwidget/*.qrc)
 SOURCES += $$files($$PWD/qtimagefilters/*.cpp)
 HEADERS += $$files($$PWD/qtimagefilters/*.h)
 
+# single application
+SOURCES += $$PWD/qtsingleapplication/qtsingleapplication.cpp $$PWD/qtsingleapplication/qtsinglecoreapplication.h
+SOURCES += $$PWD/qtsingleapplication/qtlocalpeer.cpp
+SOURCES += $$PWD/qtsingleapplication/qtlockedfile.cpp
+win32: SOURCES += $$PWD/qtsingleapplication/qtlockedfile_win.cpp
+unix: SOURCES += $$PWD/qtsingleapplication/qtlockedfile_unix.cpp
+HEADERS += $$files($$PWD/qtsingleapplication/*.h)

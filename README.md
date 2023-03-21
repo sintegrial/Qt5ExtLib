@@ -25,3 +25,4 @@ For more information, please see annotations inside the source files.
   - Gradient Editor
   - Find Widget
   - Font Panel
+- Qt Single Application
